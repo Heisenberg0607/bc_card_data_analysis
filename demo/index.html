@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>외국인 상권 Action KB</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="logo" aria-hidden="true">BC</span>
+    <div>
+      <h1>외국인 상권 진단 · Action Knowledge Base</h1>
+      <p class="sub">데이터가 지역을 진단하고, LLM은 검증된 진단과 근거를 이해관계자별 실행전략으로 변환한다</p>
+    </div>
+  </div>
+  <div class="top-right">
+    <span class="pill" id="period"></span>
+    <span class="pill warn">DEMO · 일부 합성 데이터</span>
+    <button class="icon-btn" id="themeBtn" title="라이트/다크 전환" aria-label="테마 전환">◐</button>
+  </div>
+</header>
+
+<nav class="pipeline" id="pipeline" aria-label="처리 단계">
+  <div class="step" data-step="1"><b>① BC DATA</b><span>카드 거래</span></div>
+  <div class="step" data-step="2"><b>② Analytics</b><span>Structure·Momentum·Confidence</span></div>
+  <div class="step" data-step="3"><b>③ Context</b><span>정주·관광·공급·정책</span></div>
+  <div class="step" data-step="4"><b>④ Action KB</b><span>조건에 맞는 액션 검색</span></div>
+  <div class="step" data-step="5"><b>⑤ LLM</b><span>근거 기반 설명·조합</span></div>
+  <div class="step" data-step="6"><b>⑥ Output</b><span>BC / 상인 / 지자체</span></div>
+</nav>
+
+<div class="layout">
+  <aside class="side">
+    <div class="presets" id="presets"></div>
+    <input id="search" type="search" placeholder="시군구 검색 (예: 영암, 단원구)" aria-label="시군구 검색">
+    <div class="filters">
+      <select id="fSido" aria-label="시도"></select>
+      <select id="fStruct" aria-label="Structure"></select>
+      <select id="fCtx" aria-label="Context"></select>
+    </div>
+    <div class="list-meta" id="listMeta"></div>
+    <ul class="region-list" id="regionList"></ul>
+  </aside>
+
+  <main class="main">
+    <div class="tabs" role="tablist">
+      <button role="tab" data-tab="region" class="on">지역 진단 · Action</button>
+      <button role="tab" data-tab="nation">전국 진단 현황</button>
+      <button role="tab" data-tab="kb">Action KB</button>
+      <button role="tab" data-tab="eval">프로토타입 평가</button>
+      <button role="tab" data-tab="data">데이터·가정</button>
+    </div>
+
+    <section class="tab on" id="tab-region"></section>
+    <section class="tab" id="tab-nation"></section>
+    <section class="tab" id="tab-kb"></section>
+    <section class="tab" id="tab-eval"></section>
+    <section class="tab" id="tab-data"></section>
+  </main>
+</div>
+
+<div class="tooltip" id="tip" role="tooltip"></div>
+
+<script src="data.js"></script>
+<script src="kb.js"></script>
+<script src="engine.js"></script>
+<script src="charts.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
