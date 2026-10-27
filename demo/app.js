@@ -8,7 +8,7 @@
   const G = D.meta.groups;
   const byId = Object.fromEntries(D.regions.map((r) => [r.id, r]));
   const MON = D.meta.months.map((m) => `${String(m).slice(2, 4)}.${String(m).slice(4)}`);
-  const state = { sel: "전라남도 영암군", mode: "template", apiKey: "", model: "claude-opus-5", tab: "region", llmLog: [], result: null };
+  const state = { sel: "전라남도 영암군", mode: "template", tab: "region", llmLog: [], result: null };
 
   const confTag = (c) => `<span class="conf ${c}">${c === "High" ? "●" : c === "Medium" ? "◐" : "○"} ${I18n.msg("CONF_" + c)}</span>`;
   // External Context (보고서 7.3): 정주우세형 / 혼합형 / 방문우세형 — 범주 색 1·3·2번 슬롯(전 쌍 CVD 검증 통과)
@@ -205,28 +205,23 @@
       <div class="genbar">
         <div class="seg" role="group" aria-label="생성 모드">
           <button data-mode="template" class="${state.mode === "template" ? "on" : ""}">규칙 기반 생성 (오프라인)</button>
-          <button data-mode="claude" class="${state.mode === "claude" ? "on" : ""}">Claude API</button>
+          <button data-mode="qwen" class="${state.mode === "qwen" ? "on" : ""}">Qwen API</button>
         </div>
         <button class="btn" id="genBtn">Action 생성 ▶</button>
         <span class="small" id="genStatus"></span>
-        <div class="apikey ${state.mode === "claude" ? "on" : ""}" id="apiRow">
-          <input type="password" id="apiKey" placeholder="Anthropic API 키 (sk-ant-…) — 이 탭 메모리에만 보관" value="${esc(state.apiKey)}" autocomplete="off">
-          <select id="model"><option value="claude-opus-5">Claude Opus 5</option><option value="claude-sonnet-5">Claude Sonnet 5</option></select>
-          <span class="small">키는 저장·전송되지 않고 api.anthropic.com 호출에만 쓰입니다.</span>
+        <div class="apikey ${state.mode === "qwen" ? "on" : ""}" id="apiRow">
+          <span class="small">Qwen 모델과 API 키는 서버 환경변수에서 관리합니다.</span>
         </div>
       </div>
       <div id="genOut" class="mt"></div>
     `;
 
     $("#jsonBtn").onclick = () => { const b = $("#jsonBox"); b.hidden = !b.hidden; };
-    $$(".seg button").forEach((b) => (b.onclick = () => {
+    $$("[data-mode]").forEach((b) => (b.onclick = () => {
       state.mode = b.dataset.mode;
-      $$(".seg button").forEach((x) => x.classList.toggle("on", x === b));
-      $("#apiRow").classList.toggle("on", state.mode === "claude");
+      $$("[data-mode]").forEach((x) => x.classList.toggle("on", x === b));
+      $("#apiRow").classList.toggle("on", state.mode === "qwen");
     }));
-    $("#apiKey").oninput = (e) => (state.apiKey = e.target.value.trim());
-    $("#model").value = state.model;
-    $("#model").onchange = (e) => (state.model = e.target.value);
     $("#genBtn").onclick = () => generate();
 
     C.hbarGrouped($("#chMix"), { categories: G, series: [
@@ -255,27 +250,26 @@
     const r = byId[state.sel];
     const requestLang = I18n.lang;
     const btn = $("#genBtn"), status = $("#genStatus"), out = $("#genOut");
-    if (state.mode === "claude" && !state.apiKey) { status.innerHTML = `<span class="err">API 키를 입력하거나 '규칙 기반 생성'을 선택하세요.</span>`; return; }
     btn.disabled = true; out.innerHTML = "";
-    const steps = ["BC 거래 로딩", "진단 라벨 확인", "외부 Context 결합", "Action KB 규칙 필터·근거 검색", state.mode === "claude" ? `${state.model} 생성 중…` : "규칙 기반 문장 생성", "이해관계자별 출력"];
+    const steps = ["BC 거래 로딩", "진단 라벨 확인", "외부 Context 결합", "Action KB 규칙 필터·근거 검색", state.mode === "qwen" ? "Qwen 생성 중…" : "규칙 기반 문장 생성", "이해관계자별 출력"];
     try {
       for (let i = 1; i <= 4; i++) { setPipeline(i, true); status.textContent = steps[i - 1]; await sleep(220); }
       const plan = E.runRules(r);
       setPipeline(5, true); status.textContent = steps[4];
       let cards, meta = { mode: state.mode };
-      if (state.mode === "claude") {
+      if (state.mode === "qwen") {
         const t0 = performance.now();
-        const res = await E.generateClaude(r, plan, { apiKey: state.apiKey, model: state.model });
-        cards = res.cards; meta = { mode: "claude", model: res.model, usage: res.usage, ms: Math.round(performance.now() - t0) };
+        const res = await E.generateQwen(r, plan);
+        cards = res.cards; meta = { mode: "qwen", model: res.model, usage: res.usage, ms: Math.round(performance.now() - t0) };
       } else { await sleep(260); cards = E.generateTemplate(r, plan); }
       const evals = E.evaluate(r, plan, cards);
       setPipeline(6, true); status.textContent = steps[5]; await sleep(150);
       if (I18n.lang !== requestLang || state.sel !== r.id) return;
       state.result = { id: r.id, plan, cards, evals, meta };
-      if (meta.mode === "claude") state.llmLog.push({ region: r.id, model: meta.model, evals, ms: meta.ms });
+      if (meta.mode === "qwen") state.llmLog.push({ region: r.id, model: meta.model, evals, ms: meta.ms });
       renderResult(state.result);
       $$(".step").forEach((s) => s.classList.add("done")); $$(".step").forEach((s) => s.classList.remove("active"));
-      status.textContent = meta.mode === "claude" ? `완료 · ${meta.model} · ${(meta.ms / 1000).toFixed(1)}초 · 입력 ${meta.usage?.input_tokens ?? "-"} / 출력 ${meta.usage?.output_tokens ?? "-"} 토큰` : "완료 · 동일 입력이면 항상 같은 출력";
+      status.textContent = meta.mode === "qwen" ? `완료 · ${meta.model} · ${(meta.ms / 1000).toFixed(1)}초 · 입력 ${meta.usage?.input_tokens ?? "-"} / 출력 ${meta.usage?.output_tokens ?? "-"} 토큰` : "완료 · 동일 입력이면 항상 같은 출력";
     } catch (e) {
       status.innerHTML = `<span class="err">생성 실패: ${esc(e.message)}</span>`;
       setPipeline(5, true);
@@ -328,7 +322,7 @@
     ].join("")).join("");
 
     out.innerHTML = `
-      <div class="note">${meta.mode === "claude" ? `<b>${esc(meta.model)}</b>이 규칙 엔진의 후보·근거만 받아 문장을 생성했습니다. 아래 체크는 출력물을 자동 검증한 결과입니다.` : "<b>규칙 기반 생성</b>: KB 문장과 진단값만 조합합니다. LLM 없이 재현 가능한 기준 출력이며, Claude API 모드 출력과 비교하는 기준선입니다."}</div>
+      <div class="note">${meta.mode === "qwen" ? `<b>${esc(meta.model)}</b>이 규칙 엔진의 후보·근거만 받아 문장을 생성했습니다. 아래 체크는 출력물을 자동 검증한 결과입니다.` : "<b>규칙 기반 생성</b>: KB 문장과 진단값만 조합합니다. LLM 없이 재현 가능한 기준 출력이며, Qwen API 모드 출력과 비교하는 기준선입니다."}</div>
       <div class="actions mt">${cardHtml}</div>
       <div class="grid g2 mt">
         <details class="box" open><summary>Rule Engine 추적 — 발동 ${plan.trace.filter((t) => t.fired).length} / ${plan.trace.length}</summary>
@@ -336,7 +330,7 @@
         <details class="box" open><summary>검색된 근거 (RAG) — 유효기간 지난 정책은 제외</summary>
           <div class="tbl-wrap mt" style="max-height:340px"><table class="tbl"><tr><th>대상</th><th>ID</th><th>등급</th><th>근거</th><th>유효</th></tr>${evRows}</table></div></details>
       </div>
-      ${meta.mode === "claude" ? "" : `<details class="box mt"><summary>Claude API 모드에서 전송되는 입력 (System Guardrail + JSON)</summary><pre class="json">${esc(E.SYSTEM)}\n\n${esc(JSON.stringify(E.claudeInput(byId[state.sel], plan), null, 1))}</pre></details>`}
+      ${meta.mode === "qwen" ? "" : `<details class="box mt"><summary>Qwen API 모드에서 전송되는 입력 (System Guardrail + JSON)</summary><pre class="json">${esc(E.SYSTEM)}\n\n${esc(JSON.stringify(E.llmInput(byId[state.sel], plan), null, 1))}</pre></details>`}
     `;
     $$(".cite", out).forEach((c) => {
       c.addEventListener("mousemove", (e) => { const ev = E.EV[c.dataset.ev]; C.showTip(e, ev ? `<b>${ev.id} · ${ev.grade}등급 · ${esc(ev.type)}</b><span data-original-title>${esc(ev.title)}</span><br><span class="small">${esc(ev.desc)}</span>${ev.demo ? "<br>⚠ 데모용 가상 근거" : ""}` : "KB에 없는 ID"); });
@@ -509,11 +503,11 @@
           </table>
           <p class="small mt">Stakeholder Fit의 최종 판정은 기획서대로 전문가 평가가 필요합니다. 여기서는 권한 범위를 규칙으로 근사한 값입니다.</p></div>
       </div>
-      <div class="card mt"><h3>Claude API 출력 검증 로그 (이번 세션)</h3>
+      <div class="card mt"><h3>Qwen API 출력 검증 로그 (이번 세션)</h3>
         ${log.length ? `<p class="hint">${log.length}회 생성 · 평균 근거율 ${(avg((e) => e.groundedness) * 100).toFixed(0)}% · 출처 유효 ${(avg((e) => +e.citation_valid) * 100).toFixed(0)}% · 규칙 일치 ${(avg((e) => +e.rule_match) * 100).toFixed(0)}% · 수치 일치 ${(avg((e) => e.numbers) * 100).toFixed(0)}%</p>
         <div class="tbl-wrap"><table class="tbl"><tr><th>지역</th><th>모델</th><th>이해관계자</th><th>근거율</th><th>출처 유효</th><th>수치 일치</th><th>규칙 일치</th><th>Confidence 준수</th></tr>
         ${log.flatMap((l) => l.evals.map((e) => `<tr><td>${esc(l.region)}</td><td>${esc(l.model)}</td><td>${e.stakeholder}</td><td>${(e.groundedness * 100).toFixed(0)}%</td><td>${e.citation_valid ? "✓" : "✗ " + e.badIds.join(",")}</td><td>${(e.numbers * 100).toFixed(0)}%</td><td>${e.rule_match ? "✓" : "✗"}</td><td>${e.confidence_ok ? "✓" : "✗ " + e.forbidden.join(",")}</td></tr>`)).join("")}</table></div>`
-        : `<p class="hint">아직 없음 — '지역 진단 · Action' 탭에서 Claude API 모드로 생성하면 같은 지표로 자동 검증되어 여기에 쌓입니다. 같은 지역을 여러 번 생성하면 Rule Consistency를 직접 확인할 수 있습니다.</p>`}
+        : `<p class="hint">아직 없음 — '지역 진단 · Action' 탭에서 Qwen API 모드로 생성하면 같은 지표로 자동 검증되어 여기에 쌓입니다. 같은 지역을 여러 번 생성하면 Rule Consistency를 직접 확인할 수 있습니다.</p>`}
       </div>`;
     const order = ["적극", "적극/선별", "파일럿→확대", "파일럿→확대/선별", "파일럿·추가 관찰"].filter((k) => b.strengthDist[k]);
     C.hbar($("#chStr"), { categories: order, values: order.map((k) => b.strengthDist[k]), fmt: (v) => v + "개" });
@@ -560,7 +554,7 @@
       const r=byId[state.sel], plan=E.runRules(r), cards=E.generateTemplate(r,plan);
       state.result={id:r.id,plan,cards,evals:E.evaluate(r,plan,cards),meta:{mode:"template"}};
       renderResult(state.result);
-    } else if(previous?.meta.mode === "claude") $("#genStatus").textContent="언어가 변경되었습니다. 선택 언어로 다시 생성하세요.";
+    } else if(previous?.meta.mode === "qwen") $("#genStatus").textContent="언어가 변경되었습니다. 선택 언어로 다시 생성하세요.";
     setTab(state.tab);
   });
   window.BC_APP = {select, setTab, generate, get state(){return state;}};

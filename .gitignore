@@ -14,3 +14,8 @@ bc카드 데이터.csv
 demo/tests/.tmp/
 **/stores_*.zip
 **/stores_*.partial
+
+# Track a credential-free template only.
+!demo/.env.example
+demo/.vercel/
+node_modules/

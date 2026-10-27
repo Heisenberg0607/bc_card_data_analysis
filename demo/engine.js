@@ -3,7 +3,7 @@
  * 1) buildPacket   : 분석 엔진 결과를 JSON 진단 패킷으로 정형화
  * 2) runRules      : Structure·Context로 Action Cell 선택, Momentum=시점, Confidence=강도
  * 3) retrieve      : Cell 근거 + 이해관계자 대상 정책 검색, 유효기간 지난 정책 제외
- * 4) generateTemplate / generateClaude : 근거 범위 안에서 문장 생성
+ * 4) generateTemplate / generateQwen : 근거 범위 안에서 문장 생성
  * 5) evaluate      : Groundedness·Citation·KPI·Confidence 준수 자동 점검
  */
 window.Engine = (function () {
@@ -228,7 +228,7 @@ window.Engine = (function () {
   // ── 오프라인 생성기: KB 문장 + 진단값만으로 조합 (LLM 없이 재현 가능) ──
   function generateTemplate(r, plan) { return window.ActionTemplates.generate(r, plan, { KB, D, EV, tourPlan, GAP_MIN, CLOSURE_MAX }); }
 
-  // ── Claude API (브라우저 직접 호출, 사용자 키) ──
+  // ── Qwen API (브라우저 직접 호출, 사용자 키) ──
   const SYSTEM = `당신은 BC카드 외국인 상권 Action Knowledge Base의 설명 계층이다.
 지역 유형을 스스로 판단하지 않는다. 분석 엔진이 준 진단 패킷과 규칙 엔진이 고른 Action 후보·근거만 사용해 이해관계자별 실행 문장을 쓴다.
 
@@ -243,7 +243,7 @@ ${KB.guardrails.map(([k, v]) => `- ${k}: ${v}`).join("\n")}
 출력은 JSON 하나만. 다른 텍스트 없이:
 {"cards":[{"stakeholder":"BC|MER|GOV","cell_id":"...","strength":"...","timing":"...","action":"...","why":"...","kpi":["..."],"expected_effect":"...","caution":"...","evidence_ids":["..."]}]}`;
 
-  function claudeInput(r, plan) {
+  function llmInput(r, plan) {
     return {
       output_language: window.I18n.lang,
       context_restrictions: !r.ctx.strict ? "Only observe: no context-specific nationality, tourism, settlement or policy recommendations" : null,
@@ -259,36 +259,34 @@ ${KB.guardrails.map(([k, v]) => `- ${k}: ${v}`).join("\n")}
     };
   }
 
-  async function generateClaude(r, plan, { apiKey, model }) {
-    const body = {
-      model, max_tokens: 16000, system: SYSTEM.replace("- 한국어로, 각 action은 2~4문장.", `- Write all human-readable fields in ${window.I18n.languageName()}. Each action has 2–4 sentences. Preserve cell_id, stakeholder, strength and timing exactly as supplied (internal identifiers). Context classification is deferred for incomplete observations: do not recommend context-dependent actions.`),
-      output_config: { effort: "medium" },
-      messages: [{ role: "user", content: "다음 입력으로 3개 이해관계자 Action Card를 생성하라.\n\n" + JSON.stringify(claudeInput(r, plan), null, 1) }],
-    };
-    const headers = {
-      "content-type": "application/json",
-      "x-api-key": apiKey,
-      "anthropic-version": "2023-06-01",
-      "anthropic-dangerous-direct-browser-access": "true",
-    };
-    if (model === "claude-opus-5") {        // 거절 시 서버 측 대체 모델로 재시도
-      body.fallbacks = "default";
-      headers["anthropic-beta"] = "server-side-fallback-2026-07-01";
-    }
-    const res = await fetch("https://api.anthropic.com/v1/messages", { method: "POST", headers, body: JSON.stringify(body) });
-    const json = await res.json();
-    if (!res.ok) throw new Error(`${res.status} ${json.error?.type || ""}: ${json.error?.message || "요청 실패"}`);
-    if (json.stop_reason === "refusal") throw new Error("모델이 요청을 거절했습니다 (stop_reason=refusal).");
-    const text = json.content.filter((b) => b.type === "text").map((b) => b.text).join("");
+  async function generateQwen(r, plan) {
+    let res;
+    try {
+      res = await fetch(new URL('api/qwen', location.href).pathname, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ region: r.id, lang: window.I18n.lang }),
+      });
+    } catch (_) { throw new Error(window.I18n.msg('Qwen 서버에 연결할 수 없습니다. npm start로 실행했는지 확인하세요.')); }
+    let json;
+    try { json = await res.json(); }
+    catch (_) { throw new Error(window.I18n.msg('Qwen 서버에 연결할 수 없습니다. npm start로 실행했는지 확인하세요.')); }
+    if (!res.ok) throw new Error(`${res.status}: ${window.I18n.msg(json.error?.code || 'QWEN_SERVER_ERROR')}`);
+    const choice = json.choices?.[0];
+    if (choice?.finish_reason === 'length') throw new Error(window.I18n.msg("응답이 길이 제한으로 잘렸습니다. 다시 생성하세요."));
+    if (choice?.finish_reason === 'content_filter' || choice?.message?.refusal) throw new Error(window.I18n.msg("모델이 요청을 거절했습니다."));
+    const text = choice?.message?.content;
+    if (typeof text !== 'string') throw new Error(window.I18n.msg("JSON 응답을 찾지 못했습니다."));
     const m = text.match(/\{[\s\S]*\}/);
-    if (!m) throw new Error("JSON 응답을 찾지 못했습니다.");
-    const cards = JSON.parse(m[0]).cards;
+    if (!m) throw new Error(window.I18n.msg("JSON 응답을 찾지 못했습니다."));
+    let cards;
+    try { cards = JSON.parse(m[0]).cards; }
+    catch (_) { throw new Error(window.I18n.msg('LLM 응답의 Action Card 형식이 올바르지 않습니다.')); }
     if (!Array.isArray(cards) || cards.length !== 3 || new Set(cards.map(c=>c.stakeholder)).size !== 3 || cards.some(c=>!plan.actions.some(a=>a.sh.key===c.stakeholder) || typeof c.action !== 'string' || typeof c.why !== 'string' || !Array.isArray(c.kpi) || !Array.isArray(c.evidence_ids))) throw new Error(window.I18n.msg('LLM 응답의 Action Card 형식이 올바르지 않습니다.'));
     const label = Object.fromEntries(KB.STAKEHOLDERS.map((s) => [s.key, s.label]));
     return {
       cards: cards.map((c) => ({ ...c, label: label[c.stakeholder] || c.stakeholder,
         strategy: plan.actions.find((a) => a.sh.key === c.stakeholder)?.cell.strategy })),
-      usage: json.usage, model: json.model,
+      usage: { input_tokens: json.usage?.prompt_tokens, output_tokens: json.usage?.completion_tokens }, model: json.model,
     };
   }
 
@@ -384,5 +382,5 @@ ${KB.guardrails.map(([k, v]) => `- ${k}: ${v}`).join("\n")}
     };
   }
 
-  return { buildPacket, runRules, generateTemplate, generateClaude, evaluate, batchEvaluate, claudeInput, SYSTEM, EV, GAP_MIN, CLOSURE_MAX };
+  return { buildPacket, runRules, generateTemplate, generateQwen, evaluate, batchEvaluate, llmInput, SYSTEM, EV, GAP_MIN, CLOSURE_MAX };
 })();

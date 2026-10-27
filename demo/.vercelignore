@@ -1,0 +1,6 @@
+.env
+.env.*
+server/local.cjs
+tests/
+*.py
+__pycache__/

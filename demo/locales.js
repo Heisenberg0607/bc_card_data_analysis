@@ -24,9 +24,9 @@ addBCTranslations([
 ['추가 기능: 관광·체류','Supplementary: visits and stays','附加功能：到访与停留'],['한국관광 데이터랩','Korea Tourism Data Lab','韩国旅游数据实验室'],['체류특성','Stay characteristics','停留特征'],['평균 체류시간','Average dwell time','平均停留时间'],['평균 숙박일수','Average overnight stays','平均住宿天数'],['숙박 체류형','Overnight-stay type','住宿停留型'],['단시간 방문형','Short-stay type','短时到访型'],['일반','Typical','一般'],['체류 유형','Stay type','停留类型'],['짧음','Short','短'],['김','Long','长'],
 ['월별 전체 거래건수 지수 (1월=100)','Monthly total transaction count index (January = 100)','每月全部交易笔数指数（1 月＝100）'],['전체 거래(법인 포함) · Momentum은 두 기간의 CNT·ATV 로그 초과변화','All transactions, including corporations. Momentum measures excess log changes in CNT and ATV between two periods.','全部交易（含法人）；Momentum 衡量两个期间 CNT 与 ATV 的对数超额变化。'],
 ['공급: 기존 배포 집계·검증 미완료','Supply: deployment snapshot, verification pending','供给：原部署汇总，尚未核验'],['공급 부족(+)','Supply shortfall (+)','供给不足（＋）'],['공급 여유(−)','Supply surplus (−)','供给富余（−）'],['공급 합성','Synthetic supply','合成供给'],['폐업률','Closure rate','停业率'],['공급비중','Supply share','供给占比'],['수요비중','Demand share','需求占比'],['점포','Stores','店铺'],
-['Action 생성','Generate actions','生成行动'],['규칙 기반 생성 (오프라인)','Rule-based generation (offline)','规则生成（离线）'],['생성 모드','Generation mode','生成模式'],['Anthropic API 키 (sk-ant-…) — 이 탭 메모리에만 보관','Anthropic API key (sk-ant-…) — held in this tab memory only','Anthropic API 密钥（sk-ant-…）— 仅存于本标签页内存'],['키는 저장·전송되지 않고 api.anthropic.com 호출에만 쓰입니다.','The key is not persisted. It is sent only to api.anthropic.com for your request.','密钥不持久保存，仅随请求发送至 api.anthropic.com。'],
+['Action 생성','Generate actions','生成行动'],['규칙 기반 생성 (오프라인)','Rule-based generation (offline)','规则生成（离线）'],['생성 모드','Generation mode','生成模式'],['DashScope API 키 — 이 탭 메모리에만 보관','DashScope API key — held in this tab memory only','DashScope API 密钥— 仅存于本标签页内存'],['키는 저장하지 않으며 지정한 DashScope 주소로만 전송합니다. 키 발급 리전과 API 주소를 맞추세요.','The key is not saved and is sent only to the specified DashScope endpoint. Match the API endpoint to the region that issued your key.','密钥不保存，仅发送至指定的 DashScope 地址。API 地址须与密钥签发地域一致。'],
 ['기대효과','Expected effect','预期效果'],['주의','Caution','注意事项'],['출처 유효','Valid citations','引用有效'],['규칙 일치','Rule match','规则一致'],['Confidence 준수','Confidence compliance','符合置信度约束'],['효과','Effect','效果'],['조건값','Condition values','条件值'],['대상','Stakeholder','对象'],['등급','Grade','等级'],['근거','Evidence','证据'],['유효','Valid','有效'],['규칙','Rule','规则'],['근거율','Evidence coverage','证据覆盖率'],['수치 일치','Numeric consistency','数值一致'],['데모용','Demo only','仅供演示'],['시점','Timing','时机'],['전략 축','Strategy','策略轴'],['외국인 군집','Foreign customer cluster','外国客群聚类'],
-['Rule Engine 추적 — 발동','Rule Engine trace — triggered','规则引擎追踪 — 已触发'],['검색된 근거 (RAG) — 유효기간 지난 정책은 제외','Retrieved evidence (RAG) — expired policies excluded','检索证据（RAG）— 排除过期政策'],['Claude API 모드에서 전송되는 입력 (System Guardrail + JSON)','Claude API request input (System guardrails + JSON)','Claude API 请求输入（系统约束＋JSON）'],
+['Rule Engine 추적 — 발동','Rule Engine trace — triggered','规则引擎追踪 — 已触发'],['검색된 근거 (RAG) — 유효기간 지난 정책은 제외','Retrieved evidence (RAG) — expired policies excluded','检索证据（RAG）— 排除过期政策'],['Qwen API 모드에서 전송되는 입력 (System Guardrail + JSON)','Qwen API request input (System guardrails + JSON)','Qwen API 请求输入（系统约束＋JSON）'],
 ['BC카드','BC Card','BC 卡'],['소상공인/창업자','Merchants / Entrepreneurs','商户／创业者'],['소상공인·창업자','Merchants / Entrepreneurs','商户／创业者'],['지자체','Local government','地方政府'],['소상공인','Small merchants','小微商户'],['창업자','Entrepreneurs','创业者'],
 ['분석 시군구','Districts analyzed','分析市郡区'],['사람이 해석하지 않고 동일 규칙으로 진단','Diagnosed using the same rules for every district','各地区均按同一规则诊断'],['등록외국인','Registered foreign residents','登记外国居民'],['Structure 4분면: Scale × TVD','Structure quadrants: Scale × TVD','结构四象限：Scale × TVD'],['36개 Action Cell 매핑 (Structure × Context)','36 Action Cells (Structure × Context)','36 个行动单元（结构×背景）'],['등록외국인 국적 Top 10','Top 10 nationalities of registered foreign residents','登记外国居民国籍前十'],['등록외국인 추이 (만명)','Registered foreign resident trend (10,000 people)','登记外国居民趋势（万人）'],['BC 전체 거래건수 (만건)','BC total transaction count (10,000 transactions)','BC 全部交易笔数（万笔）'],
 ['관측기간 부족: Context 분류보류','Insufficient observation: Context classification deferred','观测期不足：暂缓背景分类'],['Context 기반 선택 보류','Context-based selection deferred','暂缓基于背景的选择'],['선택 보류','Selection deferred','暂缓选择'],['분류보류 · Context 기반 추천 제한','Classification deferred · Context-dependent recommendations restricted','暂缓分类 · 限制依赖背景的推荐'],['Context 분류 및 Context 기반 추천 보류','Context classification and dependent recommendations deferred','暂缓背景分类及依赖背景的推荐'],
@@ -39,3 +39,38 @@ addBCTranslations([
 ['BC 거래 {0} · {1}개 시군구','BC transactions {0} · {1} districts','BC 交易 {0} · {1} 个市郡区'],['{0}개 지역 · 외국인 결제금액 순','{0} regions · sorted by foreign payment amount','{0} 个地区 · 按外国客群支付金额排序'],['고괴리 기준 {0} (중앙값)','High-divergence threshold {0} (median)','高差异阈值 {0}（中位数）'],
 ['{0}억원','{0} × KRW 100m','{0} 亿韩元'],['{0}억','{0} × KRW 100m','{0} 亿韩元'],['{0}만명','{0} × 10,000 people','{0} 万人'],['{0}명','{0} people','{0} 人'],['{0}만','{0} × 10,000','{0} 万'],['{0}분','{0} min','{0} 分钟'],['{0}시간','{0} hours','{0} 小时'],['{0}일','{0} days','{0} 天'],['{0}개','{0}','{0} 个'],['{0}건','{0} transactions','{0} 笔'],
 ]);
+
+// Qwen / DashScope connection labels and errors.
+window.BC_LOCALES["Qwen 모델 ID"] = {"ko": "Qwen 모델 ID", "en": "Qwen model ID", "zh-CN": "Qwen 模型 ID"};
+window.BC_LOCALES["DashScope API 기본 주소"] = {"ko": "DashScope API 기본 주소", "en": "DashScope API base URL", "zh-CN": "DashScope API 基础地址"};
+window.BC_LOCALES["DashScope API 주소를 확인하세요."] = {"ko": "DashScope API 주소를 확인하세요.", "en": "Check the DashScope API base URL.", "zh-CN": "请检查 DashScope API 基础地址。"};
+window.BC_LOCALES["Qwen 모델 ID를 확인하세요."] = {"ko": "Qwen 모델 ID를 확인하세요.", "en": "Check the Qwen model ID.", "zh-CN": "请检查 Qwen 模型 ID。"};
+window.BC_LOCALES["Qwen 연결 실패: 네트워크 또는 브라우저 CORS 설정을 확인하세요."] = {"ko": "Qwen 연결 실패: 네트워크 또는 브라우저 CORS 설정을 확인하세요.", "en": "Qwen connection failed: check the network or browser CORS settings.", "zh-CN": "Qwen 连接失败：请检查网络或浏览器 CORS 设置。"};
+window.BC_LOCALES["Qwen API가 JSON 응답을 반환하지 않았습니다."] = {"ko": "Qwen API가 JSON 응답을 반환하지 않았습니다.", "en": "The Qwen API did not return a JSON response.", "zh-CN": "Qwen API 未返回 JSON 响应。"};
+window.BC_LOCALES["응답이 길이 제한으로 잘렸습니다. 다시 생성하세요."] = {"ko": "응답이 길이 제한으로 잘렸습니다. 다시 생성하세요.", "en": "The response was truncated by the output limit. Generate again.", "zh-CN": "响应因输出长度限制被截断，请重新生成。"};
+window.BC_LOCALES["모델이 요청을 거절했습니다."] = {"ko": "모델이 요청을 거절했습니다.", "en": "The model refused the request.", "zh-CN": "模型拒绝了请求。"};
+window.BC_LOCALES["JSON 응답을 찾지 못했습니다."] = {"ko": "JSON 응답을 찾지 못했습니다.", "en": "No JSON response was found.", "zh-CN": "未找到 JSON 响应。"};
+window.BC_LOCALES["요청 실패"] = {"ko": "요청 실패", "en": "Request failed", "zh-CN": "请求失败"};
+
+window.BC_LOCALES["완료 · {0} · {1}초 · 입력 {2} / 출력 {3} 토큰"] = {"ko": "완료 · {0} · {1}초 · 입력 {2} / 출력 {3} 토큰", "en": "Complete · {0} · {1}s · Input {2} / Output {3} tokens", "zh-CN": "完成 · {0} · {1}秒 · 输入 {2} / 输出 {3} tokens"};
+window.BC_LOCALES["최대 Gap {0} {1}%p (기준 {2}%p)"] = {"ko": "최대 Gap {0} {1}%p (기준 {2}%p)", "en": "Largest gap: {0} {1} pp (threshold {2} pp)", "zh-CN": "最大差距：{0} {1} 个百分点（阈值 {2}）"};
+window.BC_LOCALES["최대 Gap {0}%p"] = {"ko": "최대 Gap {0}%p", "en": "Largest gap: {0} pp", "zh-CN": "最大差距：{0} 个百分点"};
+window.BC_LOCALES["추가 기능 세부={0}"] = {"ko": "추가 기능 세부={0}", "en": "Supplementary subtype: {0}", "zh-CN": "附加功能子类型：{0}"};
+window.BC_LOCALES["숙박 {0}일 (백분위 {1})"] = {"ko": "숙박 {0}일 (백분위 {1})", "en": "Overnight stays: {0} days (percentile {1})", "zh-CN": "住宿：{0} 天（百分位 {1}）"};
+window.BC_LOCALES["체류 {0}분 (백분위 {1})"] = {"ko": "체류 {0}분 (백분위 {1})", "en": "Dwell time: {0} min (percentile {1})", "zh-CN": "停留：{0} 分钟（百分位 {1}）"};
+window.BC_LOCALES["Top100 관광지 {0}곳"] = {"ko": "Top100 관광지 {0}곳", "en": "Top-100 attractions: {0}", "zh-CN": "Top100 景点：{0} 处"};
+window.BC_LOCALES["{0} 방문자 {1}%"] = {"ko": "{0} 방문자 {1}%", "en": "{0} visitor growth: {1}%", "zh-CN": "{0} 到访增长：{1}%"};
+
+// Server-side Qwen configuration and safe error messages.
+window.BC_LOCALES["Qwen 모델과 API 키는 서버 환경변수에서 관리합니다."]={"ko": "Qwen 모델과 API 키는 서버 환경변수에서 관리합니다.", "en": "The Qwen model and API key are configured on the server.", "zh-CN": "Qwen 模型及 API 密钥由服务器环境变量管理。"};
+window.BC_LOCALES["Qwen 생성 중…"]={"ko": "Qwen 생성 중…", "en": "Generating with Qwen…", "zh-CN": "Qwen 正在生成…"};
+window.BC_LOCALES["Qwen 서버에 연결할 수 없습니다. npm start로 실행했는지 확인하세요."]={"ko": "Qwen 서버에 연결할 수 없습니다. npm start로 실행했는지 확인하세요.", "en": "Cannot reach the Qwen server. Start the site with npm start.", "zh-CN": "无法连接 Qwen 服务器，请使用 npm start 启动。"};
+window.BC_LOCALES["QWEN_NOT_CONFIGURED"]={"ko": "서버에 Qwen API 키가 설정되지 않았습니다.", "en": "Qwen key is not configured on the server.", "zh-CN": "服务器未配置 Qwen 密钥。"};
+window.BC_LOCALES["QWEN_BAD_CONFIG"]={"ko": "서버의 Qwen 모델과 API 주소 설정을 확인하세요.", "en": "Check the server Qwen model and API endpoint settings.", "zh-CN": "请检查服务器 Qwen 模型及 API 地址配置。"};
+window.BC_LOCALES["QWEN_AUTH_ERROR"]={"ko": "Qwen 인증 실패: 서버의 키·발급 리전·모델 권한을 확인하세요.", "en": "Qwen authentication failed. Check the server key, region and model permissions.", "zh-CN": "Qwen 身份验证失败，请检查服务器密钥、地域及模型权限。"};
+window.BC_LOCALES["QWEN_RATE_LIMIT"]={"ko": "Qwen 호출 한도에 도달했습니다. 잠시 후 다시 시도하세요.", "en": "Qwen request limit reached. Try again later.", "zh-CN": "Qwen 请求已达限额，请稍后重试。"};
+window.BC_LOCALES["QWEN_UPSTREAM_ERROR"]={"ko": "Qwen 요청 실패: 서버 설정과 모델 사용 가능 여부를 확인하세요.", "en": "Qwen request failed. Check server configuration and model availability.", "zh-CN": "Qwen 请求失败，请检查服务器配置及模型可用性。"};
+window.BC_LOCALES["QWEN_TIMEOUT"]={"ko": "Qwen 응답 시간이 초과됐습니다. 잠시 후 다시 시도하세요.", "en": "Qwen timed out. Try again later.", "zh-CN": "Qwen 请求超时，请稍后重试。"};
+window.BC_LOCALES["QWEN_BAD_REQUEST"]={"ko": "Qwen 요청 형식이 올바르지 않습니다.", "en": "Invalid Qwen request.", "zh-CN": "Qwen 请求无效。"};
+window.BC_LOCALES["QWEN_SERVER_ERROR"]={"ko": "Qwen 서버 처리 중 오류가 발생했습니다.", "en": "Qwen server error.", "zh-CN": "Qwen 服务器错误。"};
+window.BC_LOCALES["QWEN_METHOD_NOT_ALLOWED"]={"ko": "지원하지 않는 요청 방식입니다.", "en": "This request method is not supported.", "zh-CN": "不支持该请求方法。"};

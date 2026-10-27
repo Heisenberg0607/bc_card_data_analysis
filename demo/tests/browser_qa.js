@@ -51,9 +51,36 @@
    for(const s of I18n.missing)sourceMissing.add(s);
  }
  for(const [k,v] of Object.entries(report.interactionChecks))if(!v)report.errors.push('Interaction failed: '+k);
+ // Qwen UI integration with synthetic responses only; never call a paid endpoint.
+ const originalFetch=window.fetch;
+ let qwenCalls=0;
+ try {
+   window.fetch=async(url,opts)=>{
+     qwenCalls++;
+     const body=JSON.parse(opts.body);
+     if(!url.endsWith('/api/qwen') || !body.region || !body.lang || opts.headers.Authorization)throw new Error('Qwen request contract failed');
+     const r=BC_DATA.regions.find(r=>r.id===BC_APP.state.sel);
+     const cards=Engine.generateTemplate(r,Engine.runRules(r));
+     return {ok:true,json:async()=>({model:'qwen3.8-max',choices:[{message:{content:JSON.stringify({cards})},finish_reason:'stop'}],usage:{prompt_tokens:123,completion_tokens:45}})};
+   };
+   report.qwenLanguages={};
+   for(const lang of ['ko','en','zh-CN']) {
+     I18n.set(lang);BC_APP.setTab('region');await pause();
+     document.querySelector('[data-mode="qwen"]').click();
+     document.getElementById('genBtn').click();
+     for(let i=0;i<150 && document.getElementById('genBtn').disabled;i++)await pause();
+     const result=BC_APP.state.result;
+     const ok=result?.meta.mode==='qwen' && result.meta.usage.input_tokens===123 && result.meta.usage.output_tokens===45;
+     report.qwenLanguages[lang]=ok;
+     if(!ok)report.errors.push('Qwen UI generation failed '+lang);
+     for(const text of I18n.missing)sourceMissing.add(text);
+   }
+   report.qwenMockRequests=qwenCalls;report.realApiCalls=0;
+ } finally {window.fetch=originalFetch;}
  // Test responsive layout inside a real same-origin 390px viewport.
  const frame=document.createElement('iframe');frame.style='width:390px;height:900px;border:0;position:absolute;left:0;top:0';
  const ready=new Promise(resolve=>frame.onload=resolve);frame.src='./index.html?lang=en&mobileQA=1';document.body.append(frame);await ready;await pause();
+ frame.contentDocument.querySelector('[data-mode="qwen"]').click();await pause();
  report.interactionChecks.mobileNoPageOverflow=frame.contentDocument.documentElement.scrollWidth<=frame.contentDocument.documentElement.clientWidth+1;
  frame.remove();
  if(!report.interactionChecks.mobileNoPageOverflow)report.errors.push('390px viewport overflows');

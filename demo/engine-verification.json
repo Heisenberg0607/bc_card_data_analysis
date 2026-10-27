@@ -93,6 +93,9 @@
       "languagePrompt": true,
       "threeStakeholders": true,
       "malformedResponseRejected": true,
+      "serverProxy": true,
+      "noBrowserCredentials": true,
+      "tokenUsageMapping": true,
       "realNetworkCalls": 0
     },
     {
@@ -100,6 +103,9 @@
       "languagePrompt": true,
       "threeStakeholders": true,
       "malformedResponseRejected": true,
+      "serverProxy": true,
+      "noBrowserCredentials": true,
+      "tokenUsageMapping": true,
       "realNetworkCalls": 0
     },
     {
@@ -107,6 +113,9 @@
       "languagePrompt": true,
       "threeStakeholders": true,
       "malformedResponseRejected": true,
+      "serverProxy": true,
+      "noBrowserCredentials": true,
+      "tokenUsageMapping": true,
       "realNetworkCalls": 0
     }
   ],
