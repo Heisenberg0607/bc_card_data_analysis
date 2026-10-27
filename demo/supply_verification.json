@@ -1,0 +1,2159 @@
+{
+  "meta": {
+    "source": {
+      "source_page": "https://www.data.go.kr/data/15083033/fileData.do",
+      "download_url": "https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000003695831&fileDetailSn=1&dataNm=%EC%86%8C%EC%83%81%EA%B3%B5%EC%9D%B8%EC%8B%9C%EC%9E%A5%EC%A7%84%ED%9D%A5%EA%B3%B5%EB%8B%A8_%EC%83%81%EA%B0%80%28%EC%83%81%EA%B6%8C%29%EC%A0%95%EB%B3%B4_20260630",
+      "source_name": "소상공인시장진흥공단_상가(상권)정보_20260630",
+      "snapshot_date": "2026-06-30",
+      "downloaded": "2026-10-27",
+      "sha256": "57aa361544108ff4fc73334f87d2ced61e41fe8638dd70bcd842930f865d2386",
+      "bytes": 352699739
+    },
+    "mapping_version": "2026-06-reconstruction-v1",
+    "mapping_sha256": "ea9d60837e79d04e4db1f26b05faca99e5f2c66af55e1fc1bf01575a41157384",
+    "mapping_kind": "Documented analytical crosswalk reconstructed from official source categories; not an official BC/SEMAS concordance",
+    "denominator": "Sum of stores assigned to the eight mutually exclusive groups within each BC region; all-industry stores_total is displayed separately",
+    "n_regions": 255,
+    "raw_rows": 2772484,
+    "unique_store_ids": 2772484,
+    "in_scope_stores": 850202,
+    "groups": [
+      "한식",
+      "대형·슈퍼",
+      "편의점",
+      "양식·카페",
+      "중식",
+      "일식·회",
+      "분식·치킨",
+      "제과·떡"
+    ],
+    "verified": true
+  },
+  "checks": {
+    "provincial_files": 16,
+    "all_store_ids_unique": true,
+    "source_regions_exactly_match_bc_255": true,
+    "no_unmatched_regions": true,
+    "no_zero_denominators": true,
+    "share_sum_100": true,
+    "incheon_admin_statutory_boundary_agrees": true
+  },
+  "incheon_boundary_rows_crosschecked": 7082,
+  "baseline_comparison": {
+    "regions_matching_all_group_counts": 253,
+    "group_cells_matching": 2024,
+    "changed_regions": [
+      "인천광역시 동구",
+      "인천광역시 중구"
+    ],
+    "note": "Source-valid corrections are not coerced to match a previous deployment snapshot"
+  },
+  "max_rounded_share_difference": 4.689999999999998,
+  "source_files": [
+    {
+      "name": "소상공인시장진흥공단_상가(상권)정보_강원_202606.csv",
+      "rows": 110206,
+      "uncompressed_bytes": 62582792,
+      "crc32": "7beb9cec"
+    },
+    {
+      "name": "소상공인시장진흥공단_상가(상권)정보_경기_202606.csv",
+      "rows": 672680,
+      "uncompressed_bytes": 368502053,
+      "crc32": "ff727371"
+    },
+    {
+      "name": "소상공인시장진흥공단_상가(상권)정보_경남_202606.csv",
+      "rows": 172887,
+      "uncompressed_bytes": 94792849,
+      "crc32": "baa5ec91"
+    },
+    {
+      "name": "소상공인시장진흥공단_상가(상권)정보_경북_202606.csv",
+      "rows": 144967,
+      "uncompressed_bytes": 78004984,
+      "crc32": "5b142599"
+    },
+    {
+      "name": "소상공인시장진흥공단_상가(상권)정보_대구_202606.csv",
+      "rows": 118357,
+      "uncompressed_bytes": 63309879,
+      "crc32": "58ceeb74"
+    },
+    {
+      "name": "소상공인시장진흥공단_상가(상권)정보_대전_202606.csv",
+      "rows": 80704,
+      "uncompressed_bytes": 43012055,
+      "crc32": "33fec714"
+    },
+    {
+      "name": "소상공인시장진흥공단_상가(상권)정보_부산_202606.csv",
+      "rows": 159689,
+      "uncompressed_bytes": 86867744,
+      "crc32": "7ae6df38"
+    },
+    {
+      "name": "소상공인시장진흥공단_상가(상권)정보_서울_202606.csv",
+      "rows": 554092,
+      "uncompressed_bytes": 301889640,
+      "crc32": "cc980dee"
+    },
+    {
+      "name": "소상공인시장진흥공단_상가(상권)정보_세종_202606.csv",
+      "rows": 15816,
+      "uncompressed_bytes": 9912521,
+      "crc32": "dd6c1d84"
+    },
+    {
+      "name": "소상공인시장진흥공단_상가(상권)정보_울산_202606.csv",
+      "rows": 54737,
+      "uncompressed_bytes": 28962806,
+      "crc32": "feed4266"
+    },
+    {
+      "name": "소상공인시장진흥공단_상가(상권)정보_인천_202606.csv",
+      "rows": 136995,
+      "uncompressed_bytes": 75353122,
+      "crc32": "04f7963a"
+    },
+    {
+      "name": "소상공인시장진흥공단_상가(상권)정보_전남광주_202606.csv",
+      "rows": 175276,
+      "uncompressed_bytes": 103015803,
+      "crc32": "4b2fd15f"
+    },
+    {
+      "name": "소상공인시장진흥공단_상가(상권)정보_전북_202606.csv",
+      "rows": 98749,
+      "uncompressed_bytes": 57408247,
+      "crc32": "dd2de597"
+    },
+    {
+      "name": "소상공인시장진흥공단_상가(상권)정보_제주_202606.csv",
+      "rows": 59009,
+      "uncompressed_bytes": 33597481,
+      "crc32": "261a78fb"
+    },
+    {
+      "name": "소상공인시장진흥공단_상가(상권)정보_충남_202606.csv",
+      "rows": 124589,
+      "uncompressed_bytes": 68319780,
+      "crc32": "80b7cebb"
+    },
+    {
+      "name": "소상공인시장진흥공단_상가(상권)정보_충북_202606.csv",
+      "rows": 93731,
+      "uncompressed_bytes": 52075833,
+      "crc32": "b49e9723"
+    }
+  ],
+  "mapping": {
+    "version": "2026-06-reconstruction-v1",
+    "source_page": "https://www.data.go.kr/data/15083033/fileData.do",
+    "source_snapshot": "2026-06-30",
+    "source_code_column": "상권업종소분류코드",
+    "source_name_column": "상권업종소분류명",
+    "mapping_kind": "Documented analytical crosswalk reconstructed from official source categories; not an official BC/SEMAS concordance",
+    "denominator": "Sum of stores assigned to the eight mutually exclusive groups within each BC region; all-industry stores_total is displayed separately",
+    "notes": [
+      "한식 separates I20111 횟집 into 일식·회; all other listed Korean-food categories remain in 한식.",
+      "양식·카페 combines Western restaurants, pizza/burgers/sandwiches and cafés; I205 Southeast Asian restaurants are not silently included.",
+      "대형·슈퍼 includes other general retail G20499 as a broad proxy. It is not an exact one-to-one BC merchant taxonomy.",
+      "제과·떡 includes ice cream/bingsu in line with the supplementary BC grouping.",
+      "Each store contributes one count, not sales, floor area or capacity. A spending-share minus count-share gap is descriptive, not proof of unmet demand.",
+      "All unlisted source categories are excluded from the eight-group denominator and recorded in the coverage audit; they still contribute to stores_total.",
+      "The source has 16 province files, including a combined 전남광주 file. Its 27 source districts are explicitly crosswalked to the unchanged BC province/district keys; no proportional allocation is used.",
+      "Incheon reform is crosswalked to BC geography: 검단구+서해구 to old 서구, 영종구 to old 중구, 제물포구 split by the 18 explicitly listed administrative neighborhoods in the official Incheon reform table. No area/population proportional allocation.",
+      "No dedicated hypermarket code appears in the downloaded snapshot. The historical 대형·슈퍼 label is represented by G20404 supermarkets and G20499 other general retail; do not infer complete hypermarket coverage."
+    ],
+    "province_aliases": {
+      "강원도": "강원특별자치도",
+      "전라북도": "전북특별자치도"
+    },
+    "groups": {
+      "한식": {
+        "I20101": "백반/한정식",
+        "I20102": "국/탕/찌개류",
+        "I20103": "족발/보쌈",
+        "I20104": "전/부침개",
+        "I20105": "국수/칼국수",
+        "I20106": "냉면/밀면",
+        "I20107": "돼지고기 구이/찜",
+        "I20108": "소고기 구이/찜",
+        "I20109": "곱창 전골/구이",
+        "I20110": "닭/오리고기 구이/찜",
+        "I20112": "해산물 구이/찜",
+        "I20113": "복 요리 전문",
+        "I20199": "기타 한식 음식점"
+      },
+      "대형·슈퍼": {
+        "G20404": "슈퍼마켓",
+        "G20499": "그 외 기타 종합 소매업"
+      },
+      "편의점": {
+        "G20405": "편의점"
+      },
+      "양식·카페": {
+        "I20401": "경양식",
+        "I20402": "파스타/스테이크",
+        "I20403": "패밀리레스토랑",
+        "I20499": "기타 서양식 음식점",
+        "I21003": "피자",
+        "I21004": "버거",
+        "I21005": "토스트/샌드위치/샐러드",
+        "I21201": "카페"
+      },
+      "중식": {
+        "I20201": "중국집",
+        "I20202": "마라탕/훠궈"
+      },
+      "일식·회": {
+        "I20111": "횟집",
+        "I20301": "일식 회/초밥",
+        "I20302": "일식 카레/돈가스/덮밥",
+        "I20303": "일식 면 요리",
+        "I20399": "기타 일식 음식점"
+      },
+      "분식·치킨": {
+        "I21006": "치킨",
+        "I21007": "김밥/만두/분식",
+        "I21099": "그 외 기타 간이 음식점"
+      },
+      "제과·떡": {
+        "I21001": "빵/도넛",
+        "I21002": "떡/한과",
+        "I21008": "아이스크림/빙수"
+      }
+    },
+    "expected_source_csvs": 16,
+    "source_region_aliases": {
+      "전남광주통합특별시 동구": "광주광역시 동구",
+      "전남광주통합특별시 서구": "광주광역시 서구",
+      "전남광주통합특별시 남구": "광주광역시 남구",
+      "전남광주통합특별시 북구": "광주광역시 북구",
+      "전남광주통합특별시 광산구": "광주광역시 광산구",
+      "전남광주통합특별시 목포시": "전라남도 목포시",
+      "전남광주통합특별시 여수시": "전라남도 여수시",
+      "전남광주통합특별시 순천시": "전라남도 순천시",
+      "전남광주통합특별시 나주시": "전라남도 나주시",
+      "전남광주통합특별시 광양시": "전라남도 광양시",
+      "전남광주통합특별시 담양군": "전라남도 담양군",
+      "전남광주통합특별시 곡성군": "전라남도 곡성군",
+      "전남광주통합특별시 구례군": "전라남도 구례군",
+      "전남광주통합특별시 고흥군": "전라남도 고흥군",
+      "전남광주통합특별시 보성군": "전라남도 보성군",
+      "전남광주통합특별시 화순군": "전라남도 화순군",
+      "전남광주통합특별시 장흥군": "전라남도 장흥군",
+      "전남광주통합특별시 강진군": "전라남도 강진군",
+      "전남광주통합특별시 해남군": "전라남도 해남군",
+      "전남광주통합특별시 영암군": "전라남도 영암군",
+      "전남광주통합특별시 무안군": "전라남도 무안군",
+      "전남광주통합특별시 함평군": "전라남도 함평군",
+      "전남광주통합특별시 영광군": "전라남도 영광군",
+      "전남광주통합특별시 장성군": "전라남도 장성군",
+      "전남광주통합특별시 완도군": "전라남도 완도군",
+      "전남광주통합특별시 진도군": "전라남도 진도군",
+      "전남광주통합특별시 신안군": "전라남도 신안군",
+      "인천광역시 검단구": "인천광역시 서구",
+      "인천광역시 서해구": "인천광역시 서구",
+      "인천광역시 영종구": "인천광역시 중구"
+    },
+    "split_districts": {
+      "인천광역시 제물포구": {
+        "source_url": "https://www.incheon.go.kr/IC01070101",
+        "column": "행정동명",
+        "by_admin_dong": {
+          "신포동": "인천광역시 중구",
+          "연안동": "인천광역시 중구",
+          "신흥동": "인천광역시 중구",
+          "도원동": "인천광역시 중구",
+          "율목동": "인천광역시 중구",
+          "동인천동": "인천광역시 중구",
+          "개항동": "인천광역시 중구",
+          "만석동": "인천광역시 동구",
+          "화수1.화평동": "인천광역시 동구",
+          "화수2동": "인천광역시 동구",
+          "송현1.2동": "인천광역시 동구",
+          "송현3동": "인천광역시 동구",
+          "송림1동": "인천광역시 동구",
+          "송림2동": "인천광역시 동구",
+          "송림3.5동": "인천광역시 동구",
+          "송림4동": "인천광역시 동구",
+          "송림6동": "인천광역시 동구",
+          "금창동": "인천광역시 동구"
+        },
+        "former_dong_legal_names": [
+          "만석동",
+          "화수동",
+          "화평동",
+          "송현동",
+          "송림동",
+          "금곡동",
+          "창영동"
+        ]
+      }
+    }
+  },
+  "source_categories": [
+    {
+      "code": "G20201",
+      "name": "타이어 소매업",
+      "stores": 1766,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20202",
+      "name": "자동차 부품 소매업",
+      "stores": 7702,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20301",
+      "name": "모터사이클 및 부품 소매업",
+      "stores": 2125,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20404",
+      "name": "슈퍼마켓",
+      "stores": 63862,
+      "group": "대형·슈퍼",
+      "disposition": "included"
+    },
+    {
+      "code": "G20405",
+      "name": "편의점",
+      "stores": 54446,
+      "group": "편의점",
+      "disposition": "included"
+    },
+    {
+      "code": "G20499",
+      "name": "그 외 기타 종합 소매업",
+      "stores": 6572,
+      "group": "대형·슈퍼",
+      "disposition": "included"
+    },
+    {
+      "code": "G20501",
+      "name": "곡물/곡분 소매업",
+      "stores": 2029,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20502",
+      "name": "가축 사료 소매업",
+      "stores": 895,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20503",
+      "name": "정육점",
+      "stores": 17852,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20504",
+      "name": "건어물/젓갈 소매업",
+      "stores": 5204,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20505",
+      "name": "수산물 소매업",
+      "stores": 9011,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20506",
+      "name": "채소/과일 소매업",
+      "stores": 19065,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20507",
+      "name": "아이스크림 할인점",
+      "stores": 237,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20508",
+      "name": "건강보조식품 소매업",
+      "stores": 15842,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20509",
+      "name": "반찬/식료품 소매업",
+      "stores": 15005,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20601",
+      "name": "얼음 소매업",
+      "stores": 155,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20602",
+      "name": "주류 소매업",
+      "stores": 982,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20603",
+      "name": "생수/음료 소매업",
+      "stores": 1403,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20604",
+      "name": "우유 소매업",
+      "stores": 482,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20701",
+      "name": "담배/전자담배 소매업",
+      "stores": 4185,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20801",
+      "name": "컴퓨터/소프트웨어 소매업",
+      "stores": 6059,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20802",
+      "name": "핸드폰 소매업",
+      "stores": 21807,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20803",
+      "name": "가전제품 소매업",
+      "stores": 8161,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20901",
+      "name": "남성 의류 소매업",
+      "stores": 8107,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20902",
+      "name": "여성 의류 소매업",
+      "stores": 34010,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20903",
+      "name": "유아용 의류 소매업",
+      "stores": 4391,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20904",
+      "name": "한복 소매업",
+      "stores": 1095,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20905",
+      "name": "기타 의류 소매업",
+      "stores": 51513,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20906",
+      "name": "침구류/커튼 소매업",
+      "stores": 8720,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20907",
+      "name": "액세서리/잡화 소매업",
+      "stores": 6322,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20908",
+      "name": "가발 소매업",
+      "stores": 766,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20909",
+      "name": "실/섬유제품 소매업",
+      "stores": 3217,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20910",
+      "name": "신발 소매업",
+      "stores": 7822,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G20911",
+      "name": "가방 소매업",
+      "stores": 3999,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G21001",
+      "name": "철물/공구 소매업",
+      "stores": 15279,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G21002",
+      "name": "벽지/장판/마루 소매업",
+      "stores": 5575,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G21003",
+      "name": "건설/건축자재 소매업",
+      "stores": 1363,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G21099",
+      "name": "기타 건설/건축자재 소매업",
+      "stores": 2016,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G21101",
+      "name": "가구 소매업",
+      "stores": 9862,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G21201",
+      "name": "전기용품/조명장치 소매업",
+      "stores": 6061,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G21202",
+      "name": "주방/가정용품 소매업",
+      "stores": 10822,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G21203",
+      "name": "악기 소매업",
+      "stores": 1535,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G21301",
+      "name": "서점",
+      "stores": 6762,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G21302",
+      "name": "문구/회화용품 소매업",
+      "stores": 8893,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G21303",
+      "name": "음반/비디오물 소매업",
+      "stores": 396,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G21304",
+      "name": "운동용품 소매업",
+      "stores": 11120,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G21305",
+      "name": "자전거 소매업",
+      "stores": 2817,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G21306",
+      "name": "장난감 소매업",
+      "stores": 5536,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G21401",
+      "name": "주유소",
+      "stores": 12551,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G21402",
+      "name": "가스 충전소",
+      "stores": 1809,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G21403",
+      "name": "가정용 연료 소매업",
+      "stores": 5523,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G21501",
+      "name": "약국",
+      "stores": 25072,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G21502",
+      "name": "의료기기 소매업",
+      "stores": 7542,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G21503",
+      "name": "화장품 소매업",
+      "stores": 27468,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G21601",
+      "name": "사무기기 소매업",
+      "stores": 1629,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G21602",
+      "name": "안경렌즈 소매업",
+      "stores": 9804,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G21603",
+      "name": "사진기/기타 광학기기 소매업",
+      "stores": 566,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G21701",
+      "name": "시계/귀금속 소매업",
+      "stores": 10516,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G21801",
+      "name": "예술품 소매업",
+      "stores": 6109,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G21802",
+      "name": "기념품점",
+      "stores": 6034,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G21901",
+      "name": "꽃집",
+      "stores": 17769,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G22001",
+      "name": "애완동물/애완용품 소매업",
+      "stores": 10309,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G22199",
+      "name": "그 외 기타 상품 전문 소매업",
+      "stores": 12842,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "G22201",
+      "name": "중고 상품 소매업",
+      "stores": 9740,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "I10101",
+      "name": "호텔/리조트",
+      "stores": 2499,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "I10102",
+      "name": "여관/모텔",
+      "stores": 24140,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "I10103",
+      "name": "펜션",
+      "stores": 44806,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "I10104",
+      "name": "캠핑/글램핑",
+      "stores": 2616,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "I10201",
+      "name": "기숙사/고시원",
+      "stores": 5829,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "I10299",
+      "name": "그 외 기타 숙박업",
+      "stores": 593,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "I20101",
+      "name": "백반/한정식",
+      "stores": 180762,
+      "group": "한식",
+      "disposition": "included"
+    },
+    {
+      "code": "I20102",
+      "name": "국/탕/찌개류",
+      "stores": 31908,
+      "group": "한식",
+      "disposition": "included"
+    },
+    {
+      "code": "I20103",
+      "name": "족발/보쌈",
+      "stores": 7573,
+      "group": "한식",
+      "disposition": "included"
+    },
+    {
+      "code": "I20104",
+      "name": "전/부침개",
+      "stores": 914,
+      "group": "한식",
+      "disposition": "included"
+    },
+    {
+      "code": "I20105",
+      "name": "국수/칼국수",
+      "stores": 20442,
+      "group": "한식",
+      "disposition": "included"
+    },
+    {
+      "code": "I20106",
+      "name": "냉면/밀면",
+      "stores": 3883,
+      "group": "한식",
+      "disposition": "included"
+    },
+    {
+      "code": "I20107",
+      "name": "돼지고기 구이/찜",
+      "stores": 55328,
+      "group": "한식",
+      "disposition": "included"
+    },
+    {
+      "code": "I20108",
+      "name": "소고기 구이/찜",
+      "stores": 6184,
+      "group": "한식",
+      "disposition": "included"
+    },
+    {
+      "code": "I20109",
+      "name": "곱창 전골/구이",
+      "stores": 7194,
+      "group": "한식",
+      "disposition": "included"
+    },
+    {
+      "code": "I20110",
+      "name": "닭/오리고기 구이/찜",
+      "stores": 8622,
+      "group": "한식",
+      "disposition": "included"
+    },
+    {
+      "code": "I20111",
+      "name": "횟집",
+      "stores": 19385,
+      "group": "일식·회",
+      "disposition": "included"
+    },
+    {
+      "code": "I20112",
+      "name": "해산물 구이/찜",
+      "stores": 14561,
+      "group": "한식",
+      "disposition": "included"
+    },
+    {
+      "code": "I20113",
+      "name": "복 요리 전문",
+      "stores": 591,
+      "group": "한식",
+      "disposition": "included"
+    },
+    {
+      "code": "I20199",
+      "name": "기타 한식 음식점",
+      "stores": 2485,
+      "group": "한식",
+      "disposition": "included"
+    },
+    {
+      "code": "I20201",
+      "name": "중국집",
+      "stores": 27615,
+      "group": "중식",
+      "disposition": "included"
+    },
+    {
+      "code": "I20202",
+      "name": "마라탕/훠궈",
+      "stores": 4369,
+      "group": "중식",
+      "disposition": "included"
+    },
+    {
+      "code": "I20301",
+      "name": "일식 회/초밥",
+      "stores": 19499,
+      "group": "일식·회",
+      "disposition": "included"
+    },
+    {
+      "code": "I20302",
+      "name": "일식 카레/돈가스/덮밥",
+      "stores": 2539,
+      "group": "일식·회",
+      "disposition": "included"
+    },
+    {
+      "code": "I20303",
+      "name": "일식 면 요리",
+      "stores": 2292,
+      "group": "일식·회",
+      "disposition": "included"
+    },
+    {
+      "code": "I20399",
+      "name": "기타 일식 음식점",
+      "stores": 512,
+      "group": "일식·회",
+      "disposition": "included"
+    },
+    {
+      "code": "I20401",
+      "name": "경양식",
+      "stores": 19598,
+      "group": "양식·카페",
+      "disposition": "included"
+    },
+    {
+      "code": "I20402",
+      "name": "파스타/스테이크",
+      "stores": 2041,
+      "group": "양식·카페",
+      "disposition": "included"
+    },
+    {
+      "code": "I20403",
+      "name": "패밀리레스토랑",
+      "stores": 410,
+      "group": "양식·카페",
+      "disposition": "included"
+    },
+    {
+      "code": "I20499",
+      "name": "기타 서양식 음식점",
+      "stores": 1051,
+      "group": "양식·카페",
+      "disposition": "included"
+    },
+    {
+      "code": "I20501",
+      "name": "베트남식 전문",
+      "stores": 6094,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "I20599",
+      "name": "기타 동남아식 전문",
+      "stores": 537,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "I20601",
+      "name": "분류 안된 외국식 음식점",
+      "stores": 49,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "I20701",
+      "name": "구내식당",
+      "stores": 7489,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "I20702",
+      "name": "뷔페",
+      "stores": 3184,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "I21001",
+      "name": "빵/도넛",
+      "stores": 31168,
+      "group": "제과·떡",
+      "disposition": "included"
+    },
+    {
+      "code": "I21002",
+      "name": "떡/한과",
+      "stores": 9418,
+      "group": "제과·떡",
+      "disposition": "included"
+    },
+    {
+      "code": "I21003",
+      "name": "피자",
+      "stores": 17509,
+      "group": "양식·카페",
+      "disposition": "included"
+    },
+    {
+      "code": "I21004",
+      "name": "버거",
+      "stores": 5749,
+      "group": "양식·카페",
+      "disposition": "included"
+    },
+    {
+      "code": "I21005",
+      "name": "토스트/샌드위치/샐러드",
+      "stores": 3407,
+      "group": "양식·카페",
+      "disposition": "included"
+    },
+    {
+      "code": "I21006",
+      "name": "치킨",
+      "stores": 40315,
+      "group": "분식·치킨",
+      "disposition": "included"
+    },
+    {
+      "code": "I21007",
+      "name": "김밥/만두/분식",
+      "stores": 44410,
+      "group": "분식·치킨",
+      "disposition": "included"
+    },
+    {
+      "code": "I21008",
+      "name": "아이스크림/빙수",
+      "stores": 2821,
+      "group": "제과·떡",
+      "disposition": "included"
+    },
+    {
+      "code": "I21099",
+      "name": "그 외 기타 간이 음식점",
+      "stores": 8144,
+      "group": "분식·치킨",
+      "disposition": "included"
+    },
+    {
+      "code": "I21101",
+      "name": "일반 유흥 주점",
+      "stores": 25375,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "I21102",
+      "name": "무도 유흥 주점",
+      "stores": 978,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "I21103",
+      "name": "생맥주 전문",
+      "stores": 15149,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "I21104",
+      "name": "요리 주점",
+      "stores": 56078,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "I21201",
+      "name": "카페",
+      "stores": 122623,
+      "group": "양식·카페",
+      "disposition": "included"
+    },
+    {
+      "code": "L10203",
+      "name": "부동산 중개/대리업",
+      "stores": 105445,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M10301",
+      "name": "변호사",
+      "stores": 9287,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M10302",
+      "name": "변리사",
+      "stores": 1241,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M10303",
+      "name": "법무사",
+      "stores": 7275,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M10306",
+      "name": "행정사",
+      "stores": 4339,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M10307",
+      "name": "공인노무사",
+      "stores": 1701,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M10399",
+      "name": "기타 법무관련 서비스업",
+      "stores": 439,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M10401",
+      "name": "공인회계사",
+      "stores": 1836,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M10402",
+      "name": "세무사",
+      "stores": 14983,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M10499",
+      "name": "기타 회계 관련 서비스업",
+      "stores": 70,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M10501",
+      "name": "광고 대행업",
+      "stores": 33608,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M10502",
+      "name": "옥외/전시 광고 대행업",
+      "stores": 1765,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M10503",
+      "name": "광고 매체 판매업",
+      "stores": 559,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M10504",
+      "name": "광고물 설계/제작업",
+      "stores": 7576,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M10599",
+      "name": "기타 광고 관련 서비스업",
+      "stores": 1987,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M10601",
+      "name": "시장 조사 및 여론 조사업",
+      "stores": 1471,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M10703",
+      "name": "경영 컨설팅업",
+      "stores": 64026,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M10901",
+      "name": "건축 설계 및 관련 서비스업",
+      "stores": 21245,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M10902",
+      "name": "도시 계획 및 조경 설계 서비스업",
+      "stores": 1988,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M10903",
+      "name": "건물 및 토목 엔지니어링 서비스업",
+      "stores": 7797,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M10904",
+      "name": "환경 관련 엔지니어링 서비스업",
+      "stores": 2396,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M10999",
+      "name": "기타 엔지니어링 서비스업",
+      "stores": 11977,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M11101",
+      "name": "동물병원",
+      "stores": 4662,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M11201",
+      "name": "인테리어 디자인업",
+      "stores": 24155,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M11202",
+      "name": "제품 디자인업",
+      "stores": 5045,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M11203",
+      "name": "시각 디자인업",
+      "stores": 15615,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M11204",
+      "name": "패션/섬유/기타 전문 디자인업",
+      "stores": 2853,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M11301",
+      "name": "사진촬영업",
+      "stores": 20483,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M11401",
+      "name": "명함/간판/광고물 제작",
+      "stores": 17694,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M11502",
+      "name": "번역/통역 서비스업",
+      "stores": 2413,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "M11504",
+      "name": "사업/무형 재산권 중개업",
+      "stores": 2651,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "N10101",
+      "name": "사업시설 유지·관리 서비스업",
+      "stores": 7761,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "N10201",
+      "name": "건축물 일반 청소업",
+      "stores": 23541,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "N10202",
+      "name": "산업설비; 운송장비 및 공공장소 청소업",
+      "stores": 3599,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "N10203",
+      "name": "소독; 구충 및 방제 서비스업",
+      "stores": 4470,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "N10301",
+      "name": "조경 유지·관리 서비스업",
+      "stores": 1874,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "N10401",
+      "name": "고용 알선업",
+      "stores": 10751,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "N10402",
+      "name": "임시/일용 인력 공급업",
+      "stores": 6757,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "N10403",
+      "name": "상용 인력 공급 및 인사관리 서비스업",
+      "stores": 2224,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "N10501",
+      "name": "여행사",
+      "stores": 13917,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "N10599",
+      "name": "기타 여행 보조/예약 서비스업",
+      "stores": 1652,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "N10703",
+      "name": "복사업",
+      "stores": 2065,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "N10799",
+      "name": "기타 사무 지원 서비스업",
+      "stores": 1749,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "N10802",
+      "name": "전시/컨벤션/행사 대행 서비스업",
+      "stores": 13093,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "N10805",
+      "name": "포장/충전업",
+      "stores": 2979,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "N10901",
+      "name": "자동차 대여업",
+      "stores": 3647,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "N10999",
+      "name": "기타 운송장비 대여업",
+      "stores": 1549,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "N11001",
+      "name": "스포츠/레크리에이션 용품 대여업",
+      "stores": 2324,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "N11002",
+      "name": "음반/비디오물 대여업",
+      "stores": 89,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "N11003",
+      "name": "만화방",
+      "stores": 645,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "N11004",
+      "name": "의류 대여업",
+      "stores": 2040,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "N11099",
+      "name": "기타 개인/가정용품 대여업",
+      "stores": 4084,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "N11101",
+      "name": "건설기계/장비 대여업",
+      "stores": 3160,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "N11102",
+      "name": "컴퓨터/사무기기 대여업",
+      "stores": 2280,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "N11199",
+      "name": "기타 산업용 기계/장비 대여업",
+      "stores": 3705,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "P10501",
+      "name": "입시·교과학원",
+      "stores": 63767,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "P10601",
+      "name": "태권도/무술학원",
+      "stores": 11802,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "P10603",
+      "name": "요가/필라테스 학원",
+      "stores": 21718,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "P10605",
+      "name": "레크리에이션 교육기관",
+      "stores": 4770,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "P10607",
+      "name": "청소년 수련시설",
+      "stores": 791,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "P10609",
+      "name": "음악학원",
+      "stores": 15877,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "P10611",
+      "name": "미술학원",
+      "stores": 9322,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "P10613",
+      "name": "기타 예술/스포츠 교육기관",
+      "stores": 4903,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "P10615",
+      "name": "외국어학원",
+      "stores": 5485,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "P10617",
+      "name": "전문자격/고시학원",
+      "stores": 547,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "P10619",
+      "name": "사회교육시설",
+      "stores": 794,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "P10621",
+      "name": "직원 훈련기관",
+      "stores": 2559,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "P10623",
+      "name": "운전학원",
+      "stores": 725,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "P10625",
+      "name": "기타 기술/직업 훈련학원",
+      "stores": 15005,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "P10627",
+      "name": "컴퓨터 학원",
+      "stores": 1074,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "P10629",
+      "name": "그 외 기타 교육기관",
+      "stores": 7503,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "P10701",
+      "name": "교육컨설팅업",
+      "stores": 6001,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "P10799",
+      "name": "기타 교육지원 서비스업",
+      "stores": 9132,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "Q10101",
+      "name": "종합병원",
+      "stores": 388,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "Q10102",
+      "name": "일반병원",
+      "stores": 1169,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "Q10103",
+      "name": "치과병원",
+      "stores": 392,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "Q10104",
+      "name": "한방병원",
+      "stores": 546,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "Q10105",
+      "name": "요양병원",
+      "stores": 1398,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "Q10201",
+      "name": "내과/소아과 의원",
+      "stores": 7912,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "Q10202",
+      "name": "외과 의원",
+      "stores": 3952,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "Q10203",
+      "name": "신경/정신과 의원",
+      "stores": 1611,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "Q10204",
+      "name": "피부/비뇨기과 의원",
+      "stores": 4862,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "Q10205",
+      "name": "안과 의원",
+      "stores": 1208,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "Q10206",
+      "name": "이비인후과 의원",
+      "stores": 1869,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "Q10207",
+      "name": "산부인과 의원",
+      "stores": 1321,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "Q10208",
+      "name": "성형외과 의원",
+      "stores": 1608,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "Q10209",
+      "name": "기타 의원",
+      "stores": 2575,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "Q10210",
+      "name": "치과의원",
+      "stores": 13394,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "Q10211",
+      "name": "한의원",
+      "stores": 9928,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "Q10212",
+      "name": "방사선 진단/병리 검사 의원",
+      "stores": 319,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "Q10402",
+      "name": "유사 의료업",
+      "stores": 3014,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "R10202",
+      "name": "독서실/스터디 카페",
+      "stores": 10854,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "R10306",
+      "name": "종합 스포츠시설",
+      "stores": 666,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "R10307",
+      "name": "헬스장",
+      "stores": 14634,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "R10308",
+      "name": "수영장",
+      "stores": 555,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "R10309",
+      "name": "볼링장",
+      "stores": 1038,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "R10310",
+      "name": "당구장",
+      "stores": 12287,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "R10311",
+      "name": "골프 연습장",
+      "stores": 11768,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "R10312",
+      "name": "테니스장",
+      "stores": 3147,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "R10313",
+      "name": "탁구장",
+      "stores": 1855,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "R10314",
+      "name": "기타 스포츠시설 운영업",
+      "stores": 2506,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "R10316",
+      "name": "스쿼시/라켓볼장",
+      "stores": 197,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "R10402",
+      "name": "비디오방",
+      "stores": 106,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "R10404",
+      "name": "전자 게임장",
+      "stores": 3105,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "R10405",
+      "name": "기타 오락장",
+      "stores": 5133,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "R10406",
+      "name": "PC방",
+      "stores": 7464,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "R10407",
+      "name": "노래방",
+      "stores": 26573,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "R10408",
+      "name": "낚시터 운영업",
+      "stores": 565,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "R10409",
+      "name": "수상/해양 레저업",
+      "stores": 1241,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "R10410",
+      "name": "복권 발행/판매업",
+      "stores": 7271,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "R10414",
+      "name": "바둑/장기/체스 경기 운영업",
+      "stores": 503,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "R10499",
+      "name": "기타 오락관련 서비스업",
+      "stores": 4544,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "S20101",
+      "name": "컴퓨터/노트북/프린터 수리업",
+      "stores": 7776,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "S20201",
+      "name": "핸드폰/통신장비 수리업",
+      "stores": 1620,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "S20301",
+      "name": "자동차 정비소",
+      "stores": 38362,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "S20302",
+      "name": "자동차 세차장",
+      "stores": 14318,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "S20401",
+      "name": "모터사이클 수리업",
+      "stores": 3221,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "S20501",
+      "name": "가전제품 수리업",
+      "stores": 13368,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "S20601",
+      "name": "의류/이불 수선업",
+      "stores": 6875,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "S20602",
+      "name": "가죽/가방/신발 수선업",
+      "stores": 998,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "S20603",
+      "name": "시계/귀금속/악기 수리업",
+      "stores": 516,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "S20699",
+      "name": "그 외 기타 개인/가정용품 수리업",
+      "stores": 8375,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "S20701",
+      "name": "미용실",
+      "stores": 120979,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "S20702",
+      "name": "피부 관리실",
+      "stores": 36738,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "S20703",
+      "name": "네일숍",
+      "stores": 27493,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "S20801",
+      "name": "목욕탕/사우나",
+      "stores": 4910,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "S20802",
+      "name": "마사지/안마",
+      "stores": 6085,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "S20803",
+      "name": "체형/비만 관리",
+      "stores": 5491,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "S20901",
+      "name": "세탁소",
+      "stores": 20146,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "S20902",
+      "name": "셀프 빨래방",
+      "stores": 4990,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "S21001",
+      "name": "장례식장",
+      "stores": 3829,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "S21002",
+      "name": "화장터/묘지/납골당",
+      "stores": 1254,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "S21101",
+      "name": "예식장업",
+      "stores": 724,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    },
+    {
+      "code": "S21105",
+      "name": "결혼 상담 서비스업",
+      "stores": 1759,
+      "group": null,
+      "disposition": "excluded: outside the eight supplementary groups"
+    }
+  ],
+  "group_count_differences": [
+    {
+      "region": "인천광역시 동구",
+      "group": "한식",
+      "old_stores": 107,
+      "rebuilt_stores": 320,
+      "difference": 213
+    },
+    {
+      "region": "인천광역시 동구",
+      "group": "대형·슈퍼",
+      "old_stores": 34,
+      "rebuilt_stores": 96,
+      "difference": 62
+    },
+    {
+      "region": "인천광역시 동구",
+      "group": "편의점",
+      "old_stores": 17,
+      "rebuilt_stores": 55,
+      "difference": 38
+    },
+    {
+      "region": "인천광역시 동구",
+      "group": "양식·카페",
+      "old_stores": 55,
+      "rebuilt_stores": 123,
+      "difference": 68
+    },
+    {
+      "region": "인천광역시 동구",
+      "group": "중식",
+      "old_stores": 14,
+      "rebuilt_stores": 35,
+      "difference": 21
+    },
+    {
+      "region": "인천광역시 동구",
+      "group": "일식·회",
+      "old_stores": 20,
+      "rebuilt_stores": 18,
+      "difference": -2
+    },
+    {
+      "region": "인천광역시 동구",
+      "group": "분식·치킨",
+      "old_stores": 34,
+      "rebuilt_stores": 97,
+      "difference": 63
+    },
+    {
+      "region": "인천광역시 동구",
+      "group": "제과·떡",
+      "old_stores": 13,
+      "rebuilt_stores": 35,
+      "difference": 22
+    },
+    {
+      "region": "인천광역시 중구",
+      "group": "한식",
+      "old_stores": 1873,
+      "rebuilt_stores": 1660,
+      "difference": -213
+    },
+    {
+      "region": "인천광역시 중구",
+      "group": "대형·슈퍼",
+      "old_stores": 398,
+      "rebuilt_stores": 336,
+      "difference": -62
+    },
+    {
+      "region": "인천광역시 중구",
+      "group": "편의점",
+      "old_stores": 321,
+      "rebuilt_stores": 283,
+      "difference": -38
+    },
+    {
+      "region": "인천광역시 중구",
+      "group": "양식·카페",
+      "old_stores": 822,
+      "rebuilt_stores": 754,
+      "difference": -68
+    },
+    {
+      "region": "인천광역시 중구",
+      "group": "중식",
+      "old_stores": 178,
+      "rebuilt_stores": 157,
+      "difference": -21
+    },
+    {
+      "region": "인천광역시 중구",
+      "group": "일식·회",
+      "old_stores": 289,
+      "rebuilt_stores": 291,
+      "difference": 2
+    },
+    {
+      "region": "인천광역시 중구",
+      "group": "분식·치킨",
+      "old_stores": 444,
+      "rebuilt_stores": 381,
+      "difference": -63
+    },
+    {
+      "region": "인천광역시 중구",
+      "group": "제과·떡",
+      "old_stores": 196,
+      "rebuilt_stores": 174,
+      "difference": -22
+    }
+  ],
+  "all_store_total_differences": [
+    {
+      "region": "인천광역시 동구",
+      "old": 911,
+      "rebuilt": 2873
+    },
+    {
+      "region": "인천광역시 중구",
+      "old": 12506,
+      "rebuilt": 10544
+    }
+  ],
+  "comparison_checks": {
+    "all_store_totals_match_existing": false,
+    "all_2040_group_counts_match_existing": false,
+    "rounded_shares_match_existing": false
+  }
+}

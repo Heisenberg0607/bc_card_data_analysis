@@ -48,7 +48,7 @@ window.Charts = (function () {
 
   /* 가로 묶음 막대: categories × series(≤2) */
   function hbarGrouped(container, { categories, series, unit = "%", fmt = (v) => v.toFixed(1) }) {
-    const W = 560, rowH = 30, top = 8, left = 78, right = 44;
+    const W = 560, rowH = 30, top = 8, left = I18n.lang === "en" ? 160 : 90, right = 44;
     const H = top + categories.length * rowH + 22;
     const svg = svgRoot(container, W, H);
     const max = niceMax(Math.max(...series.flatMap((s) => s.values)));
@@ -75,7 +75,7 @@ window.Charts = (function () {
 
   /* 발산 막대: 0 기준 ± (Supply Gap) */
   function diverging(container, { categories, values, extra = () => "", unit = "%p" }) {
-    const W = 560, rowH = 26, top = 8, left = 78, right = 50;
+    const W = 560, rowH = 26, top = 8, left = I18n.lang === "en" ? 160 : 90, right = 50;
     const H = top + categories.length * rowH + 22;
     const svg = svgRoot(container, W, H);
     const m = niceMax(Math.max(...values.map(Math.abs), 1));
@@ -132,21 +132,21 @@ window.Charts = (function () {
   function scatter(container, { points, xCut, yCut, onClick, selected }) {
     const W = 1000, H = 440, top = 26, left = 52, right = 16, bottom = 36;
     const svg = svgRoot(container, W, H);
-    const lx = points.map((p) => Math.log10(Math.max(p.x, 1)));
+    const lx = points.map((p) => Math.log10(Math.max(p.x, Number.MIN_VALUE)));
     const x0 = Math.floor(Math.min(...lx) * 2) / 2, x1 = Math.ceil(Math.max(...lx) * 2) / 2;
     const y1 = Math.ceil(Math.max(...points.map((p) => p.y)) * 10) / 10;
-    const X = (v) => left + ((Math.log10(Math.max(v, 1)) - x0) / (x1 - x0)) * (W - left - right);
+    const X = (v) => left + ((Math.log10(Math.max(v, Number.MIN_VALUE)) - x0) / (x1 - x0)) * (W - left - right);
     const Y = (v) => top + (1 - v / y1) * (H - top - bottom);
     for (let e = Math.ceil(x0); e <= x1; e++) {
       const v = Math.pow(10, e);
       el("line", { x1: X(v), x2: X(v), y1: top, y2: H - bottom, class: "gridl" }, svg);
-      text(svg, X(v), H - bottom + 16, v >= 1e8 ? v / 1e8 + "억" : v / 1e4 + "만", { "text-anchor": "middle" });
+      text(svg, X(v), H - bottom + 16, (v * 100).toPrecision(2) + "%", { "text-anchor": "middle" });
     }
     for (let v = 0; v <= y1 + 1e-9; v += 0.1) {
       el("line", { x1: left, x2: W - right, y1: Y(v), y2: Y(v), class: "gridl" }, svg);
       text(svg, left - 6, Y(v) + 4, v.toFixed(1), { "text-anchor": "end" });
     }
-    text(svg, (W + left) / 2, H - 4, "외국인 결제금액 (6개월, 로그) → Scale", { "text-anchor": "middle", class: "lbl" });
+    text(svg, (W + left) / 2, H - 4, "전체 CNT 전국 비중 (로그) → Scale", { "text-anchor": "middle", class: "lbl" });
     text(svg, 8, 12, "TVD ↑ (소비구조 괴리)", { class: "lbl" });
     el("line", { x1: X(xCut), x2: X(xCut), y1: top, y2: H - bottom, stroke: "var(--ink-2)", "stroke-dasharray": "4 4" }, svg);
     el("line", { x1: left, x2: W - right, y1: Y(yCut), y2: Y(yCut), stroke: "var(--ink-2)", "stroke-dasharray": "4 4" }, svg);
@@ -164,7 +164,7 @@ window.Charts = (function () {
 
   /* 단순 가로 막대 (국적 Top10 등) */
   function hbar(container, { categories, values, color = "var(--s1)", fmt = (v) => v.toLocaleString(), compact = false }) {
-    const W = compact ? 300 : 560, rowH = compact ? 30 : 24, top = 4, left = compact ? 92 : 110, right = compact ? 48 : 70;
+    const W = compact ? 360 : 700, rowH = compact ? 30 : 28, top = 4, left = I18n.lang === 'en' ? (compact ? 140 : 280) : (compact ? 92 : 130), right = compact ? 48 : 100;
     const H = top + categories.length * rowH + 4;
     const svg = svgRoot(container, W, H);
     const max = Math.max(...values);

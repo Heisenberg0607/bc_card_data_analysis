@@ -86,7 +86,9 @@ a { color: var(--s1); }
 .side input, .side select, .field input, .field select { width: 100%; padding: 7px 9px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); }
 .filters { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
 .filters select { font-size: 12px; padding: 6px; }
-.list-meta { font-size: 12px; color: var(--muted); }
+.list-head { display: flex; justify-content: space-between; align-items: center; gap: 6px; }
+.list-meta { font-size: 12px; color: var(--muted); white-space: nowrap; }
+.list-head select { width: auto; font-size: 12px; padding: 4px 6px; }
 .region-list { list-style: none; margin: 0; padding: 0; overflow: auto; flex: 1; border-top: 1px solid var(--border); }
 .region-list li { padding: 8px 6px; border-bottom: 1px solid var(--border); cursor: pointer; display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; }
 .region-list li:hover { background: var(--surface-2); }
@@ -243,3 +245,17 @@ pre.json { background: var(--surface-2); padding: 10px; border-radius: 8px; over
   .filters { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+/* Language switching and long translated labels */
+.top-right{flex-wrap:wrap;gap:8px} #langSwitch{flex-shrink:0} #langSwitch button{white-space:nowrap}
+.card,.stat,.acard,.genbar,.side,.main{min-width:0} .stat .v{overflow-wrap:anywhere}
+.tabs{flex-wrap:wrap} .tabs button{white-space:normal} .tags{flex-wrap:wrap}
+.region-list .nm,.tag,.strength{overflow-wrap:anywhere} .row{flex-wrap:wrap}
+.filters select{min-width:0;width:100%} .tbl-wrap{overflow:auto} .txt,dd,.hint{overflow-wrap:anywhere}
+html[lang="en"] .region-list .nm{font-size:12px} html[lang="en"] .tag{white-space:normal}
+.stat .k{display:block}.stat .k .tag{display:inline-flex;margin-top:4px;white-space:nowrap;overflow-wrap:normal}
+.tag,.strength{word-break:normal;overflow-wrap:normal}
+html[lang="en"] .filters{grid-template-columns:1fr}
+.list-head{flex-wrap:wrap;gap:6px}.list-head select{max-width:100%}
+@media(max-width:1200px){.grid.g4,.grid.g5{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:800px){.top{flex-direction:column;align-items:flex-start}.top-right{width:100%}.grid.g4,.grid.g5{grid-template-columns:repeat(2,minmax(0,1fr))}.pipeline{overflow:auto}.layout{display:block}.side{max-height:320px;width:auto}.region-list{max-height:180px}.grid.g2{grid-template-columns:minmax(0,1fr)}}

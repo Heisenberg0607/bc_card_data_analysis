@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>외국인 상권 Action KB</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=4dffbd01dccd">
 </head>
 <body>
 <header class="top">
@@ -40,7 +40,14 @@
       <select id="fStruct" aria-label="Structure"></select>
       <select id="fCtx" aria-label="Context"></select>
     </div>
-    <div class="list-meta" id="listMeta"></div>
+    <div class="list-head">
+      <span class="list-meta" id="listMeta"></span>
+      <select id="fSort" aria-label="정렬">
+        <option value="famt">외국인 결제금액순</option>
+        <option value="conf_desc">Confidence 높은순</option>
+        <option value="conf_asc">Confidence 낮은순</option>
+      </select>
+    </div>
     <ul class="region-list" id="regionList"></ul>
   </aside>
 
@@ -63,10 +70,20 @@
 
 <div class="tooltip" id="tip" role="tooltip"></div>
 
-<script src="data.js"></script>
-<script src="kb.js"></script>
-<script src="engine.js"></script>
-<script src="charts.js"></script>
-<script src="app.js"></script>
+<script src="data.js?v=4411d9a9dfee"></script>
+<script src="kb.js?v=8666112c8fda"></script>
+<script src="locales.js?v=c5c244876291"></script>
+<script src="region_locales.js?v=5d37d691abc5"></script>
+<script src="action_locales.js?v=0dd060b42794"></script>
+<script src="ui_locales.js?v=b1fd02b537c2"></script>
+<script src="detail_locales.js?v=3b1dfc7d1e2a"></script>
+<script src="final_locales.js?v=2136269fea0e"></script>
+<script src="supply_locales.js?v=3677c31970d5"></script>
+<script src="i18n.js?v=30612847c024"></script>
+<script src="action_templates.js?v=3312b26de7fd"></script>
+<script src="engine.js?v=39f61152786e"></script>
+<script src="charts.js?v=077849f269f6"></script>
+<script src="app.js?v=dac09f0b3715"></script>
+<script>if(new URLSearchParams(location.search).get("qa")==="1"){const s=document.createElement("script");s.src="tests/browser_qa.js?v=29e8bbbb8963";document.body.append(s);}</script>
 </body>
 </html>

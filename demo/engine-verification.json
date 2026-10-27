@@ -1,0 +1,116 @@
+{
+  "languages": {
+    "ko": {
+      "regions": 255,
+      "cards": 765,
+      "label_groups": 63,
+      "context_eligibility": 1,
+      "language_compliance": 1,
+      "groundedness": 1,
+      "numbers": 1,
+      "rule_consistency": 1,
+      "citation_validity": 1,
+      "kpi": 1,
+      "actionability": 1,
+      "stakeholder_fit": 1,
+      "confidence_ok": 1,
+      "strengthDist": {
+        "파일럿·추가 관찰": 267,
+        "적극": 240,
+        "파일럿→확대": 258
+      }
+    },
+    "en": {
+      "regions": 255,
+      "cards": 765,
+      "label_groups": 63,
+      "context_eligibility": 1,
+      "language_compliance": 1,
+      "groundedness": 1,
+      "numbers": 1,
+      "rule_consistency": 1,
+      "citation_validity": 1,
+      "kpi": 1,
+      "actionability": 1,
+      "stakeholder_fit": 1,
+      "confidence_ok": 1,
+      "strengthDist": {
+        "파일럿·추가 관찰": 267,
+        "적극": 240,
+        "파일럿→확대": 258
+      }
+    },
+    "zh-CN": {
+      "regions": 255,
+      "cards": 765,
+      "label_groups": 63,
+      "context_eligibility": 1,
+      "language_compliance": 1,
+      "groundedness": 1,
+      "numbers": 1,
+      "rule_consistency": 1,
+      "citation_validity": 1,
+      "kpi": 1,
+      "actionability": 1,
+      "stakeholder_fit": 1,
+      "confidence_ok": 1,
+      "strengthDist": {
+        "파일럿·추가 관찰": 267,
+        "적극": 240,
+        "파일럿→확대": 258
+      }
+    }
+  },
+  "negativeChecks": [
+    {
+      "lang": "ko",
+      "unknownCitationRejected": true,
+      "unprovidedNumberRejected": true,
+      "wrongIntensityRejected": true,
+      "lowConfidenceWordingRejected": true,
+      "pendingContextPolicyRejected": true
+    },
+    {
+      "lang": "en",
+      "unknownCitationRejected": true,
+      "unprovidedNumberRejected": true,
+      "wrongIntensityRejected": true,
+      "lowConfidenceWordingRejected": true,
+      "pendingContextPolicyRejected": true
+    },
+    {
+      "lang": "zh-CN",
+      "unknownCitationRejected": true,
+      "unprovidedNumberRejected": true,
+      "wrongIntensityRejected": true,
+      "lowConfidenceWordingRejected": true,
+      "pendingContextPolicyRejected": true
+    }
+  ],
+  "llmMockChecks": [
+    {
+      "lang": "ko",
+      "languagePrompt": true,
+      "threeStakeholders": true,
+      "malformedResponseRejected": true,
+      "realNetworkCalls": 0
+    },
+    {
+      "lang": "en",
+      "languagePrompt": true,
+      "threeStakeholders": true,
+      "malformedResponseRejected": true,
+      "realNetworkCalls": 0
+    },
+    {
+      "lang": "zh-CN",
+      "languagePrompt": true,
+      "threeStakeholders": true,
+      "malformedResponseRejected": true,
+      "realNetworkCalls": 0
+    }
+  ],
+  "urlOverridesSavedLanguage": true,
+  "invalidUrlFallsBackToSavedLanguage": true,
+  "crossLanguageIdsEvidenceIntensityTimingEqual": true
+}

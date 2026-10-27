@@ -1,0 +1,91 @@
+{
+  "action_csv": {
+    "regions": 255,
+    "numeric_max_abs_diff": {
+      "cnt_share": 9.963817965141786e-17,
+      "tvd_amt": 9.71445146547012e-17,
+      "tvd_cnt": 9.71445146547012e-17,
+      "foreign_amt_share_personal": 9.71445146547012e-17,
+      "BC_foreign_amt_total": 0.0,
+      "BC_foreign_cnt_total": 0.0,
+      "momentum_cnt_3m_logpct": 7.105427357601002e-15,
+      "momentum_cnt_2m_logpct": 5.329070518200751e-15,
+      "momentum_atv_3m_logpct": 1.7763568394002505e-15,
+      "momentum_atv_2m_logpct": 1.7763568394002505e-15,
+      "momentum_amt_3m_logpct": 3.552713678800501e-15
+    },
+    "labels_match": true
+  },
+  "final_core": {
+    "regions": 255,
+    "numeric_max_abs_diff": {
+      "cnt_share": 9.963817965141786e-17,
+      "tvd_amt": 9.71445146547012e-17,
+      "tvd_cnt": 9.71445146547012e-17,
+      "foreign_amt_share_personal": 9.71445146547012e-17,
+      "BC_foreign_amt_total": 0.0,
+      "BC_foreign_cnt_total": 0.0,
+      "momentum_cnt_3m_logpct": 7.105427357601002e-15,
+      "momentum_cnt_2m_logpct": 7.105427357601002e-15,
+      "momentum_atv_3m_logpct": 1.7763568394002505e-15,
+      "momentum_atv_2m_logpct": 1.7763568394002505e-15,
+      "momentum_amt_3m_logpct": 7.105427357601002e-15
+    },
+    "labels_match": true
+  },
+  "external_inputs_all_255": {
+    "regions": 255,
+    "numeric_max_abs_diff": {
+      "resident_population_202606": 0.0,
+      "MOJ_registered_foreigners_202606": 0.0,
+      "registered_foreign_share": 9.71445146547012e-17,
+      "kto_foreign_visit_share": 9.8879238130678e-17,
+      "kto_foreign_observed_days": 0.0
+    },
+    "labels_match": true
+  },
+  "strict_context_csv": {
+    "regions": 251,
+    "numeric_max_abs_diff": {
+      "registered_foreign_share": 9.71445146547012e-17,
+      "kto_foreign_visit_share": 9.8879238130678e-17,
+      "kto_foreign_observed_days": 0.0,
+      "visitor_pctile": 1.4210854715202004e-14,
+      "resident_pctile": 1.4210854715202004e-14,
+      "context_gap": 7.105427357601002e-15,
+      "bc_spend_residual": 3.774758283725532e-15
+    },
+    "labels_match": true
+  },
+  "final_context_csv": {
+    "regions": 251,
+    "numeric_max_abs_diff": {
+      "registered_foreign_share": 9.71445146547012e-17,
+      "kto_foreign_visit_share": 9.8879238130678e-17,
+      "kto_foreign_observed_days": 0.0,
+      "visitor_pctile": 1.4210854715202004e-14,
+      "resident_pctile": 1.4210854715202004e-14,
+      "context_gap": 7.105427357601002e-15,
+      "bc_spend_residual": 3.774758283725532e-15
+    },
+    "labels_match": true
+  },
+  "pending_context_regions": [
+    "경기도 화성시 동탄구",
+    "경기도 화성시 만세구",
+    "경기도 화성시 병점구",
+    "경기도 화성시 효행구"
+  ],
+  "confidence_robust_scale": {
+    "CNT": 2.214311511000665,
+    "ATV": 0.7727485730252659
+  },
+  "scale_cut": 0.0035081289861998714,
+  "tvd_cut": 0.16976845707930768,
+  "source_hashes": {
+    "raw/ABP_CONTEST_DATA.csv": "031c3a5ca96d4873a7b7f17869458e4f2ca3452c45cf4c45ff46baca44058c26",
+    "derived/BC_action_matrix_recomputed_255.csv": "d333060653f9e3f699648ff6ed0ed56a085a7a8c1751824fb02caff3d001dbb9",
+    "derived/BC_external_context_final_255.csv": "faa9ce4a329f9991b3daa67bb280797cc3766a5d7f931b4425db9cbf4389f5f0",
+    "derived/BC_external_context_strict_251.csv": "36435bf91ee345e234d3d2b7832368cb129bb8be2044362db5a0ff581cb4aac5"
+  }
+}

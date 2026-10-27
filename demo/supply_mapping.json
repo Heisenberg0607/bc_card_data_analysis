@@ -1,0 +1,147 @@
+{
+  "version": "2026-06-reconstruction-v1",
+  "source_page": "https://www.data.go.kr/data/15083033/fileData.do",
+  "source_snapshot": "2026-06-30",
+  "source_code_column": "상권업종소분류코드",
+  "source_name_column": "상권업종소분류명",
+  "mapping_kind": "Documented analytical crosswalk reconstructed from official source categories; not an official BC/SEMAS concordance",
+  "denominator": "Sum of stores assigned to the eight mutually exclusive groups within each BC region; all-industry stores_total is displayed separately",
+  "notes": [
+    "한식 separates I20111 횟집 into 일식·회; all other listed Korean-food categories remain in 한식.",
+    "양식·카페 combines Western restaurants, pizza/burgers/sandwiches and cafés; I205 Southeast Asian restaurants are not silently included.",
+    "대형·슈퍼 includes other general retail G20499 as a broad proxy. It is not an exact one-to-one BC merchant taxonomy.",
+    "제과·떡 includes ice cream/bingsu in line with the supplementary BC grouping.",
+    "Each store contributes one count, not sales, floor area or capacity. A spending-share minus count-share gap is descriptive, not proof of unmet demand.",
+    "All unlisted source categories are excluded from the eight-group denominator and recorded in the coverage audit; they still contribute to stores_total.",
+    "The source has 16 province files, including a combined 전남광주 file. Its 27 source districts are explicitly crosswalked to the unchanged BC province/district keys; no proportional allocation is used.",
+    "Incheon reform is crosswalked to BC geography: 검단구+서해구 to old 서구, 영종구 to old 중구, 제물포구 split by the 18 explicitly listed administrative neighborhoods in the official Incheon reform table. No area/population proportional allocation.",
+    "No dedicated hypermarket code appears in the downloaded snapshot. The historical 대형·슈퍼 label is represented by G20404 supermarkets and G20499 other general retail; do not infer complete hypermarket coverage."
+  ],
+  "province_aliases": {
+    "강원도": "강원특별자치도",
+    "전라북도": "전북특별자치도"
+  },
+  "groups": {
+    "한식": {
+      "I20101": "백반/한정식",
+      "I20102": "국/탕/찌개류",
+      "I20103": "족발/보쌈",
+      "I20104": "전/부침개",
+      "I20105": "국수/칼국수",
+      "I20106": "냉면/밀면",
+      "I20107": "돼지고기 구이/찜",
+      "I20108": "소고기 구이/찜",
+      "I20109": "곱창 전골/구이",
+      "I20110": "닭/오리고기 구이/찜",
+      "I20112": "해산물 구이/찜",
+      "I20113": "복 요리 전문",
+      "I20199": "기타 한식 음식점"
+    },
+    "대형·슈퍼": {
+      "G20404": "슈퍼마켓",
+      "G20499": "그 외 기타 종합 소매업"
+    },
+    "편의점": {
+      "G20405": "편의점"
+    },
+    "양식·카페": {
+      "I20401": "경양식",
+      "I20402": "파스타/스테이크",
+      "I20403": "패밀리레스토랑",
+      "I20499": "기타 서양식 음식점",
+      "I21003": "피자",
+      "I21004": "버거",
+      "I21005": "토스트/샌드위치/샐러드",
+      "I21201": "카페"
+    },
+    "중식": {
+      "I20201": "중국집",
+      "I20202": "마라탕/훠궈"
+    },
+    "일식·회": {
+      "I20111": "횟집",
+      "I20301": "일식 회/초밥",
+      "I20302": "일식 카레/돈가스/덮밥",
+      "I20303": "일식 면 요리",
+      "I20399": "기타 일식 음식점"
+    },
+    "분식·치킨": {
+      "I21006": "치킨",
+      "I21007": "김밥/만두/분식",
+      "I21099": "그 외 기타 간이 음식점"
+    },
+    "제과·떡": {
+      "I21001": "빵/도넛",
+      "I21002": "떡/한과",
+      "I21008": "아이스크림/빙수"
+    }
+  },
+  "expected_source_csvs": 16,
+  "source_region_aliases": {
+    "전남광주통합특별시 동구": "광주광역시 동구",
+    "전남광주통합특별시 서구": "광주광역시 서구",
+    "전남광주통합특별시 남구": "광주광역시 남구",
+    "전남광주통합특별시 북구": "광주광역시 북구",
+    "전남광주통합특별시 광산구": "광주광역시 광산구",
+    "전남광주통합특별시 목포시": "전라남도 목포시",
+    "전남광주통합특별시 여수시": "전라남도 여수시",
+    "전남광주통합특별시 순천시": "전라남도 순천시",
+    "전남광주통합특별시 나주시": "전라남도 나주시",
+    "전남광주통합특별시 광양시": "전라남도 광양시",
+    "전남광주통합특별시 담양군": "전라남도 담양군",
+    "전남광주통합특별시 곡성군": "전라남도 곡성군",
+    "전남광주통합특별시 구례군": "전라남도 구례군",
+    "전남광주통합특별시 고흥군": "전라남도 고흥군",
+    "전남광주통합특별시 보성군": "전라남도 보성군",
+    "전남광주통합특별시 화순군": "전라남도 화순군",
+    "전남광주통합특별시 장흥군": "전라남도 장흥군",
+    "전남광주통합특별시 강진군": "전라남도 강진군",
+    "전남광주통합특별시 해남군": "전라남도 해남군",
+    "전남광주통합특별시 영암군": "전라남도 영암군",
+    "전남광주통합특별시 무안군": "전라남도 무안군",
+    "전남광주통합특별시 함평군": "전라남도 함평군",
+    "전남광주통합특별시 영광군": "전라남도 영광군",
+    "전남광주통합특별시 장성군": "전라남도 장성군",
+    "전남광주통합특별시 완도군": "전라남도 완도군",
+    "전남광주통합특별시 진도군": "전라남도 진도군",
+    "전남광주통합특별시 신안군": "전라남도 신안군",
+    "인천광역시 검단구": "인천광역시 서구",
+    "인천광역시 서해구": "인천광역시 서구",
+    "인천광역시 영종구": "인천광역시 중구"
+  },
+  "split_districts": {
+    "인천광역시 제물포구": {
+      "source_url": "https://www.incheon.go.kr/IC01070101",
+      "column": "행정동명",
+      "by_admin_dong": {
+        "신포동": "인천광역시 중구",
+        "연안동": "인천광역시 중구",
+        "신흥동": "인천광역시 중구",
+        "도원동": "인천광역시 중구",
+        "율목동": "인천광역시 중구",
+        "동인천동": "인천광역시 중구",
+        "개항동": "인천광역시 중구",
+        "만석동": "인천광역시 동구",
+        "화수1.화평동": "인천광역시 동구",
+        "화수2동": "인천광역시 동구",
+        "송현1.2동": "인천광역시 동구",
+        "송현3동": "인천광역시 동구",
+        "송림1동": "인천광역시 동구",
+        "송림2동": "인천광역시 동구",
+        "송림3.5동": "인천광역시 동구",
+        "송림4동": "인천광역시 동구",
+        "송림6동": "인천광역시 동구",
+        "금창동": "인천광역시 동구"
+      },
+      "former_dong_legal_names": [
+        "만석동",
+        "화수동",
+        "화평동",
+        "송현동",
+        "송림동",
+        "금곡동",
+        "창영동"
+      ]
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "core_metrics_unchanged_all_255": true,
+  "sourceRows": 2772484,
+  "inScopeStores": 850202,
+  "correctedSupplyRegions": [
+    {
+      "id": "인천광역시 동구",
+      "before": 911,
+      "after": 2873,
+      "beforeInScope": 294,
+      "afterInScope": 779,
+      "topGapBefore": [
+        "대형·슈퍼",
+        45.45535557166214
+      ],
+      "topGapAfter": [
+        "대형·슈퍼",
+        44.69186391569295
+      ]
+    },
+    {
+      "id": "인천광역시 중구",
+      "before": 12506,
+      "after": 10544,
+      "beforeInScope": 4521,
+      "afterInScope": 4036,
+      "topGapBefore": [
+        "편의점",
+        18.987976162010042
+      ],
+      "topGapAfter": [
+        "편의점",
+        19.07608319868001
+      ]
+    }
+  ]
+}
