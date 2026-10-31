@@ -1,5 +1,7 @@
 # BC Card Commercial Area Diagnosis Based on Foreign Consumer Spending Structure
 
+This project was submitted to the 1st AI Finance Big Data Platform Consumer Data Utilization Idea Competition in South Korea.
+
 An analysis and multilingual Action dashboard connecting spending structure, transaction changes, and resident/visitor context across 255 regions.
 
 [English](README.md) | [한국어](README.ko.md) | [简体中文](README.zh-CN.md)
